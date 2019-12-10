@@ -1,0 +1,33 @@
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\bin\Debug\Project1.exe.config
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\bin\Debug\Project1.exe
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\bin\Debug\Project1.pdb
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\obj\Debug\Project1.csprojAssemblyReference.cache
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\obj\Debug\Project1.Form1.resources
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\obj\Debug\Project1.Properties.Resources.resources
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\obj\Debug\Project1.csproj.GenerateResource.cache
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\obj\Debug\Project1.exe
+D:\Files\FONTYS_1920\Advanced Phase\Advanced Project\Project1\obj\Debug\Project1.pdb
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.csprojAssemblyReference.cache
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.Form1.resources
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.Form2.resources
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.Properties.Resources.resources
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.csproj.GenerateResource.cache
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.exe
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.pdb
+C:\Users\alexi\OneDrive\Desktop\Login App\bin\Debug\Project1.exe.config
+C:\Users\alexi\OneDrive\Desktop\Login App\bin\Debug\Project1.exe
+C:\Users\alexi\OneDrive\Desktop\Login App\bin\Debug\Project1.pdb
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.Schedule.resources
+C:\Users\alexi\OneDrive\Desktop\Login App\obj\Debug\Project1.Groceries.resources
+C:\Users\alexi\OneDrive\Desktop\Login App2\bin\Debug\Project1.exe.config
+C:\Users\alexi\OneDrive\Desktop\Login App2\bin\Debug\Project1.exe
+C:\Users\alexi\OneDrive\Desktop\Login App2\bin\Debug\Project1.pdb
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.csprojAssemblyReference.cache
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.Form1.resources
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.Form2.resources
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.Schedule.resources
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.Groceries.resources
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.Properties.Resources.resources
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.csproj.GenerateResource.cache
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.exe
+C:\Users\alexi\OneDrive\Desktop\Login App2\obj\Debug\Project1.pdb
