@@ -9,8 +9,9 @@ namespace Project1
     public class Grocery : Student
     {
         private double sum;
-        public Grocery(string givenFirstName, string givenUsername, string givenRoomNumber,double givenSum)
+        public Grocery(int givenId, string givenFirstName, string givenUsername, string givenRoomNumber, double givenSum)
         {
+            id = givenId;
             firstName = givenFirstName;
             email = givenUsername;
             roomNumber = givenRoomNumber;

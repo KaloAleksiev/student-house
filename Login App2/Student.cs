@@ -8,25 +8,28 @@ namespace Project1
 {
     public class Student
     {
+        protected int id;
         protected string firstName;
         private string secondName;
         protected string roomNumber;
         protected string email;
-        private string password;
 
-        public Student()
-        {
-
+        public Student() {
+        
         }
-        public Student(string givenFirstName, string givenSecondName, string givenRoomNumber, string givenEmail, string givenPassword)
+        public Student(int givenId, string givenFirstName, string givenSecondName, string givenRoomNumber, string givenEmail)
         {
+            id = givenId;
             firstName = givenFirstName;
             secondName = givenSecondName;
             roomNumber = givenRoomNumber;
             email = givenEmail;
-            password = givenPassword;
         }
 
+        public int GetId()
+        {
+            return id;
+        }
         public string GetRoomNumber()
         {
             return roomNumber;
@@ -34,10 +37,6 @@ namespace Project1
         public string GetName()
         {
             return email;
-        }
-        public string GetPassword()
-        {
-            return password;
         }
         public string GetFirstName()
         {

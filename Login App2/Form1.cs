@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using GraphQL.Client;
+using GraphQL.Common.Request;
 
 
 namespace Project1
@@ -16,42 +18,52 @@ namespace Project1
     {
         Student newStudent;
         StudentHouse studentHouse = new StudentHouse();
-        int indexOfCurrentStudent;
+        private GraphQLClient graphQLClient;
+        Student currentStudent = null;
         int count = 0;
         public Form1()
         {
             InitializeComponent();
-            readDataBase();
-        }
-        void readDataBase()
-        {
-            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\alexi\OneDrive\Desktop\Students.txt");
-            string line=file.ReadLine();
-            string[] eachPerson = new string[10];
-            while(line!=null)
-            {
-                count++;
-                eachPerson=line.Split(' ');
-                newStudent = new Student(eachPerson[0], eachPerson[1], eachPerson[2], eachPerson[3], eachPerson[4]);
-                studentHouse.Add(newStudent);
-                line = file.ReadLine();
-            }
-            studentHouse.CountStudents = count;
-
+            graphQLClient = new GraphQLClient("http://ap-2.herokuapp.com/v1/graphql");
         }
 
-        bool findNamePassword(string username, string password)
+        async Task<bool> findStudent(string email, string password)
         {
-            foreach (Student student in studentHouse.GetStudents())
+
+            var heroRequest = new GraphQLRequest
             {
-                indexOfCurrentStudent++;
-                if (username == student.GetName() && password==student.GetPassword())
-                {
-                    return true;
+                Query = @"
+                    query GetUser($email: String, $password: String) {
+                        users(where: {_and: {password: {_eq: $password}}, email: {_eq: $email}}) {
+                            id
+                            email
+                            firstName
+                            lastName
+                            roomId
+                        }
+                    }
+                ",
+                Variables = new {
+                    email = email,
+                    password = password
                 }
-               
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var users = graphQLResponse.Data.users;
+
+            if (users.Count == 0) {
+                return false;
             }
-            return false;
+
+            currentStudent = new Student(
+                (int)users.First.id.Value,
+                users.First.firstName.Value,
+                users.First.lastName.Value,
+                users.First.roomId.Value,
+                users.First.email.Value
+            );
+            return true;
         }
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -60,16 +72,16 @@ namespace Project1
         }
         void openNewForm()
         {
-            var newForm = new Form2(studentHouse,  indexOfCurrentStudent); //I pass to the next form the studentHouse class and the index of the logged in student
+            var newForm = new Form2(studentHouse,  currentStudent); //I pass to the next form the studentHouse class and the index of the logged in student
             newForm.Show();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             string username = tbName.Text;
             string password = tbPassword.Text;
-            indexOfCurrentStudent = -1;
-            if (findNamePassword(username, password))
+            currentStudent = null;
+            if (await findStudent(username, password))
             {
                 openNewForm();
                 this.Hide();
