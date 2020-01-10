@@ -21,8 +21,8 @@ namespace Project1
         {
             InitializeComponent();
             this.studentHouse = studentHouse;
-            lblStudentHouse.Text = "Hello, " + currentStudent.GetFirstName(); 
-            lblPage.Text = "You are currently on the Home page.";
+            lblStudentHouse.Text = currentStudent.GetFirstName();
+            lblPage.Text = "Home page";
             initializeGroceryList(); //everyone's balance is 0 at the beginning ; I initialize it here so that if I close the grocery window the balances remain saved
         }
         void initializeGroceryList()
@@ -64,6 +64,9 @@ namespace Project1
             newForm.Show();
         }
 
-
+        private void pbClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

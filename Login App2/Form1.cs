@@ -52,6 +52,11 @@ namespace Project1
             var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
             var users = graphQLResponse.Data.users;
 
+
+            for (int i = 0; i < users.Count; i++) {
+                var ddd = users[i].id.Value;
+            }
+            
             if (users.Count == 0) {
                 return false;
             }
@@ -94,8 +99,47 @@ namespace Project1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
+           /* var userRequest = new GraphQLRequest
+            {
+                Query = @"
+                    query GetUser($id: Int) {
+                        users(where: {id: {_eq: $id}}) {
+                            roomId
+                        }
+                    }
+                ",
+                Variables = new
+                {
+                    id = ,KKNMNMJHM
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(userRequest);
+            var users = graphQLResponse.Data.users;*/
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            var userRequest2 = new GraphQLRequest
+            {
+                Query = @"
+                    query GetUser($id: Int) {
+                        users(where: {id: {_eq: $id}}) {
+                            roomId
+                        }
+                    }
+                ",
+                Variables = new
+                {
+                    id = 2,
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(userRequest2);
+            var users = graphQLResponse.Data.users;
+            MessageBox.Show(users.First.roomId.Value);
         }
     }
 }
