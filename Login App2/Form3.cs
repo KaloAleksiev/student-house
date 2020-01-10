@@ -12,20 +12,20 @@ namespace Project1
 {
     public partial class Schedule : Form
     {
-        StudentHouse studentHouse;
-        int keepIndex;
+        Database database;
         bool cleaned;
         Trash trash;
+        Student currentStudent;
         string today, date, day;
         int todayToInt,dayToInt;
 
-        public Schedule(StudentHouse studentHouse, int index, Trash trash)
+        public Schedule(Student currentStudent, Trash trash)
         {
             InitializeComponent();
-            this.studentHouse = studentHouse;
-            lblStudentHouse.Text = "Hello, " + studentHouse.GetStudent(index).GetFirstName();
+            this.currentStudent = currentStudent;
+            database = new Database();
+            lblStudentHouse.Text = "Hello, " + currentStudent.GetFirstName();
             lblPage.Text = "You are currently on the Cleaning schedule page.";
-            keepIndex = index;
             this.trash = trash;
             getToday(); //gets today date
             whoseTurnIsToday(); //displays whose turn is today
@@ -37,12 +37,12 @@ namespace Project1
             today = today.Substring(0, 10);
             todayToInt = Convert.ToInt32(today.Substring(0, 2));
         }
-        void whoseTurnIsToday()
+        private async void whoseTurnIsToday()
         {
-            int roomNr = Convert.ToInt32(studentHouse.GetStudent(keepIndex).GetRoomNumber());
-            roomNr--;
-            int count = studentHouse.CountStudents;
-            if (todayToInt%count == roomNr)  //if it's the logged in student turn to clean
+            int currentStudentNumber= currentStudent.GetId();
+            currentStudentNumber--;
+            int count = await database.GetTotalStudents();
+            if (todayToInt%count == currentStudentNumber)  //if it's the logged in student turn to clean
             {
                 if (!trash.TakenOut) //if trash wasnt taken out yet
                 {
@@ -60,19 +60,19 @@ namespace Project1
             else //if it is not logged in student turn to clean, then I show whose turn is
             {
                 lblWhoCleansToday.Visible = true;
-                lblWhoCleansToday.Text = "Today is " + studentHouse.GetStudent(todayToInt % count).GetFirstName() + "'s (Room: " + studentHouse.GetStudent(todayToInt % count).GetRoomNumber() + ") turn to do some cleaning";
+                lblWhoCleansToday.Text = "Today is " + database.GetFirstName(todayToInt % count) + "'s (Room: " + database.GetRoomNumber(todayToInt % count) + ") turn to do some cleaning";
             }
             
         }
-        void whenToCleanNext()
+        private async void whenToCleanNext()
         {
 
             lblAnn.Text = "The next cleaning day on this month is:";
-            int roomNr = Convert.ToInt32(studentHouse.GetStudent(keepIndex).GetRoomNumber());
-            roomNr--;
-            int count = studentHouse.CountStudents;
+            int currentStudentNumber = currentStudent.GetId();
+            currentStudentNumber--;
+            int count = await database.GetTotalStudents();
             int todayToInt = this.todayToInt;
-            if (todayToInt % count == roomNr) //if it's the logged in student turn to clean today
+            if (todayToInt % count == currentStudentNumber) //if it's the logged in student turn to clean today
             {
                 if (!trash.TakenOut)//if th trash was taken out
                 {
@@ -89,7 +89,7 @@ namespace Project1
             {
                 lblCleaningSchedule.Text = "Today, on " + today + " you have nothing to clean";
 
-                while (todayToInt % count != roomNr)
+                while (todayToInt % count != currentStudentNumber)
                 {
                     todayToInt++;
                 }
@@ -113,16 +113,16 @@ namespace Project1
 
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        private async void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             date = calendar.SelectionStart.ToString();
             date = date.Substring(0, 10);//I get the dd.MM.yyyy
-            int count = studentHouse.CountStudents;
-            int roomNr = Convert.ToInt32(studentHouse.GetStudent(keepIndex).GetRoomNumber());
-            roomNr--;
+            int count = await database.GetTotalStudents();
+            int currentStudentNumber = currentStudent.GetId();
+            currentStudentNumber--;
             day = date.Substring(0, 2);
             dayToInt = Convert.ToInt32(day);
-            if (dayToInt%count==roomNr) //if the logged in student turn is on the selected date
+            if (dayToInt%count== currentStudentNumber) //if the logged in student turn is on the selected date
             {
                 if (dayToInt == todayToInt) //also, if that day is today
                 {

@@ -15,14 +15,12 @@ namespace Project1
         int keepIndex;
         StudentHouse studentHouse;
         GroceryList groceryList;
-        public Groceries(StudentHouse studentHouse, int index, GroceryList groceryList)
+        public Groceries(Student currentStudent, GroceryList groceryList)
         {
             InitializeComponent();
             this.studentHouse = studentHouse;
-            lblStudentHouse.Text = "Hello, " + studentHouse.GetStudent(index).GetFirstName();
+            lblStudentHouse.Text = "Hello, " + currentStudent.GetFirstName();
             lblPage.Text = "You are currently on the Groceries page.";
-
-            keepIndex = index;
             this.groceryList = groceryList;
             initiateListBox();
         }

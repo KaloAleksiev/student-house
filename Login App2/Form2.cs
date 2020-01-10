@@ -12,16 +12,20 @@ namespace Project1
 {
     public partial class Form2 : Form
     {
+        int currentStudentID;
+        string firstName;
         Grocery grocery;
-        int keepIndex;
-        StudentHouse studentHouse;
+        Student currentStudent;
+        Database database;
         GroceryList groceryList = new GroceryList();
         Trash trash = new Trash(false); //I created a class for the trash being taken out thing here so that if I close the cleaning schedule tab it will be saved that the trash has been taken out
-        public Form2(StudentHouse studentHouse, Student currentStudent)
+        public Form2(Student currentStudent)
         {
             InitializeComponent();
-            this.studentHouse = studentHouse;
-            lblStudentHouse.Text = currentStudent.GetFirstName();
+            database = new Database();
+            this.currentStudentID=currentStudentID;
+            this.currentStudent = currentStudent;
+            lblStudentHouse.Text = "Hello, "+ currentStudent.GetFirstName();
             lblPage.Text = "Home page";
             initializeGroceryList(); //everyone's balance is 0 at the beginning ; I initialize it here so that if I close the grocery window the balances remain saved
         }
@@ -53,20 +57,26 @@ namespace Project1
 
         private void btnCleaningSchedule_Click(object sender, EventArgs e)
         {
-            var newForm = new Schedule(studentHouse, keepIndex, trash);
+            var newForm = new Schedule(currentStudent, trash);
             newForm.Show();
 
         }
 
         private void btnGroceries_Click(object sender, EventArgs e)
         {
-            var newForm = new Groceries(studentHouse, keepIndex, groceryList);
+            var newForm = new Groceries(currentStudent, groceryList);
             newForm.Show();
         }
 
         private void pbClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            int x = await database.GetTotalStudents();
+            MessageBox.Show(x.ToString());
         }
     }
 }
