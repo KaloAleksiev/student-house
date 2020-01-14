@@ -37,7 +37,7 @@ namespace Project1
         private async void checkIfIsCurrentStudentTurnToClean()
         {
             totalStudents = await database.GetTotalStudents();
-            int x = currentStudent.GetId() - 1;
+            int x = Convert.ToInt32(currentStudent.GetRoomNumber()) - 1;
             if(todayToInt % totalStudents == x)
             {
                 isCurrentStudentTurnToClean = true;
@@ -77,13 +77,12 @@ namespace Project1
             date = calendar.SelectionStart.ToString();
             date = date.Substring(0, 10);//I get the dd.MM.yyyy
             int count = await database.GetTotalStudents();
-            int currentStudentNumber = currentStudent.GetId();
-            currentStudentNumber--;
             day = date.Substring(0, 2);
             dayToInt = Convert.ToInt32(day);
             totalStudents = await database.GetTotalStudents();
             int id = dayToInt%totalStudents;
             id++;
+            id = await database.GetIdByRoomId(id.ToString());
             string firstName = await database.GetFirstName(id);
             string roomNr = await database.GetRoomNumber(id);
             lblDateChanged.Text = "On " + date + " " + firstName + " (Room number: " + roomNr + ") should do the cleaning";

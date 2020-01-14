@@ -60,7 +60,40 @@ namespace Project1
             return currentStudent;
         }
 
-        public async Task<string>GetFirstName(int id)
+        public async Task<int>GetIdByRoomId(string roomId)
+        {
+
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    query MyQuery4($roomId: String) {
+                      __typename
+                      users(where: {roomId: {_eq: $roomId}}) {
+                        id
+                      }
+                    }
+                ",
+                Variables = new
+                {
+                    roomId = roomId
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var users = graphQLResponse.Data.users;
+
+
+
+            if (users.Count == 0)
+            {
+                return -1;
+            }
+
+            
+            return (int)users.First.id.Value;
+        }
+
+        public async Task<string> GetFirstName(int id)
         {
 
             var heroRequest = new GraphQLRequest
@@ -91,7 +124,7 @@ namespace Project1
                 return "-1";
             }
 
-            
+
             return users.First.firstName;
         }
         public async Task<string> GetRoomNumber(int id)
