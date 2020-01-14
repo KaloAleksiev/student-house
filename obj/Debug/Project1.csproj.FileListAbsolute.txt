@@ -320,3 +320,6 @@ C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\o
 C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\obj\Debug\Project1.csproj.CopyComplete
 C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\obj\Debug\Project1.exe
 C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\obj\Debug\Project1.pdb
+C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\obj\Debug\Project1.NewComplaint.resources
+C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\obj\Debug\Project1.OldComplaints.resources
+C:\Users\alexi\OneDrive\Desktop\Student House\advanced-project---student-house\obj\Debug\Project1.Form6.resources
