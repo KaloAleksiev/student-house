@@ -14,7 +14,7 @@ namespace Project1
     {
         int id;
         AnnouncementList complaintList;
-        Database database=new Database();
+        Database database = new Database();
         public OldComplaints(int id)
         {
             InitializeComponent();
@@ -43,10 +43,15 @@ namespace Project1
 
         private void lbOldComplaints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = lbOldComplaints.SelectedIndex;
-            Form6 f = new Form6(complaintList.GetComplaintAtIndex(index));
-            f.Show();
+            
 
+        }
+
+        private void lbOldComplaints_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int index = lbOldComplaints.SelectedIndex;
+            ComplaintInfo cf = new ComplaintInfo(complaintList.GetComplaintAtIndex(index));
+            cf.Show();
         }
     }
 }

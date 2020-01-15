@@ -181,6 +181,19 @@ namespace Project1
             infoForm.Show();
         }
 
+        private void btnCreateComplaint_Click(object sender, EventArgs e)
+        {
+            Announcement announcement = new Announcement(DateTime.Now.ToShortDateString(), currentStudent.GetFirstName(), null, null, currentStudent.GetId());
+            NewComplaint nc = new NewComplaint(announcement);
+            nc.Show();
+        }
+
+        private void btnOldComplaints_Click(object sender, EventArgs e)
+        {
+            OldComplaints oc = new OldComplaints(currentStudent.GetId());
+            oc.Show();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             arduinoLine = readFromArduino();

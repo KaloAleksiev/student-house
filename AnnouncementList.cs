@@ -20,6 +20,10 @@ namespace Project1
             announcementList.Add(announcement);
         }
 
+        public Announcement GetComplaintAtIndex(int index)
+        {
+            return announcementList[index];
+        }
 
         public List<Announcement> GetAllInfo()
         {

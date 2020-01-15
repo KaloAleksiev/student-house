@@ -22,6 +22,11 @@ namespace Project1
 
         private void btnSendComplaint_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void btnSendComplaint_Click_1(object sender, EventArgs e)
+        {
             if (tbComplaintTitle.Text != "" && tbComplaintText.Text != "")
             {
                 announcement.SetTitle(tbComplaintTitle.Text);
@@ -33,11 +38,6 @@ namespace Project1
             {
                 MessageBox.Show("Please fill out all the fields.");
             }
-        }
-
-        private void lbAnnouncements_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
