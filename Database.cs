@@ -60,40 +60,7 @@ namespace Project1
             return currentStudent;
         }
 
-        public async Task<int>GetIdByRoomId(string roomId)
-        {
-
-            var heroRequest = new GraphQLRequest
-            {
-                Query = @"
-                    query MyQuery4($roomId: String) {
-                      __typename
-                      users(where: {roomId: {_eq: $roomId}}) {
-                        id
-                      }
-                    }
-                ",
-                Variables = new
-                {
-                    roomId = roomId
-                }
-            };
-
-            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
-            var users = graphQLResponse.Data.users;
-
-
-
-            if (users.Count == 0)
-            {
-                return -1;
-            }
-
-            
-            return (int)users.First.id.Value;
-        }
-
-        public async Task<string> GetFirstName(int id)
+        public async Task<string>GetFirstName(int id)
         {
 
             var heroRequest = new GraphQLRequest
@@ -124,7 +91,7 @@ namespace Project1
                 return "-1";
             }
 
-
+            
             return users.First.firstName;
         }
         public async Task<string> GetRoomNumber(int id)
@@ -252,7 +219,7 @@ namespace Project1
                 Announcement anno;
                 for (int i = 0; i < announcements.Count; i++)
                 {
-                    anno = new Announcement(announcements[i].time.Value, announcements[i].author.Value, announcements[i].title.Value, announcements[i].message.Value,0);
+                    anno = new Announcement(announcements[i].time.Value, announcements[i].author.Value, announcements[i].title.Value, announcements[i].message.Value);
                     announcementList.AddAnnouncement(anno);
                 }
                 return announcementList;
@@ -260,81 +227,6 @@ namespace Project1
             
         }
 
-        public async Task<int> InsertNewComplaint(string time, string author, string title, string message, int id)
-        {
-            var heroRequest = new GraphQLRequest
-            {
-                Query = @"
-                 mutation InsertComplaint($authorName: String, $complaintText: String, $date: String, $title: String, $authorId: Int) {
-                  __typename
-                  insert_Complaints(objects: {authorName: $authorName, complaintText: $complaintText, date: $date, title: $title, authorId: $authorId}) {
-                    returning {
-                      complaintId
-                    }
-                  }
-                }",
-                Variables = new
-                {
-                    date = time,
-                    authorName = author,
-                    authorId=id,
-                    title = title,
-                    complaintText=message
-                }
-            };
-
-
-            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
-            var complaints = graphQLResponse.Data.Complaints;
-
-
-
-            return  complaints.First.id.Value;
-        }
-
-        public async Task<AnnouncementList> GetAllComplaints(int id)
-        {
-            var heroRequest = new GraphQLRequest
-            {
-                Query = @"
-                 query MyQuery5($id: Int) {
-                      __typename
-                      Complaints(where: {authorId: {_eq: $id}}) {
-                        complaintId
-                        complaintText
-                        date
-                        title
-                        authorName
-                      }
-                    }",
-                    Variables = new
-                    {
-                        id=id
-                    }
-            };
-
-            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
-            var complaints = graphQLResponse.Data.Complaints;
-
-
-
-            if (complaints.Count == 0)
-            {
-                return null;
-            }
-            else
-            {
-                AnnouncementList complaintList = new AnnouncementList();
-                Announcement complaint;
-                for (int i = 0; i < complaints.Count; i++)
-                {
-                    complaint = new Announcement(complaints[i].date.Value, complaints[i].authorName.Value, complaints[i].title.Value, (int)complaints[i].complaintId.Value, complaints[i].complaintText.Value);
-                    complaintList.AddAnnouncement(complaint);
-                }
-                return complaintList;
-            }
-
-        }
 
     }
 }

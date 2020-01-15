@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="AnnouncementForm.cs">
       <SubType>Form</SubType>
@@ -115,31 +121,22 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </Compile>
     <Compile Include="Grocery.cs" />
     <Compile Include="GroceryList.cs" />
-    <Compile Include="NewComplaint.cs">
+    <Compile Include="InfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewComplaint.Designer.cs">
-      <DependentUpon>NewComplaint.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OldComplaints.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OldComplaints.Designer.cs">
-      <DependentUpon>OldComplaints.cs</DependentUpon>
+    <Compile Include="InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentHouse.cs" />
     <Compile Include="Trash.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AnnouncementForm.resx">
       <DependentUpon>AnnouncementForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,14 +155,8 @@
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewComplaint.resx">
-      <DependentUpon>NewComplaint.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OldComplaints.resx">
-      <DependentUpon>OldComplaints.cs</DependentUpon>
+    <EmbeddedResource Include="InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

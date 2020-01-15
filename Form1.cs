@@ -40,16 +40,25 @@ namespace Project1
         {
             string username = tbName.Text;
             string password = tbPassword.Text;
-            currentStudent = await database.FindStudent(username, password, currentStudent);
-            if (currentStudent!=null)
+            if (password == "admin" && username == "admin")
             {
-                openNewForm();
-                this.Hide();
+                Admin admin = new Admin();
+                admin.Show();
             }
             else
             {
-                MessageBox.Show("The credentials did not match");
+                currentStudent = await database.FindStudent(username, password, currentStudent);
+                if (currentStudent != null)
+                {
+                    openNewForm();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("The credentials did not match");
+                }
             }
+            
             
 
         }

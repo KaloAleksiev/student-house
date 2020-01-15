@@ -33,12 +33,12 @@ namespace Project1
             checkIfIsCurrentStudentTurnToClean();
             lblAnn.Text += currentStudent.GetFirstName() + " " + currentStudent.GetLastName() + ":";
         }
-     
+
         private async void checkIfIsCurrentStudentTurnToClean()
         {
             totalStudents = await database.GetTotalStudents();
-            int x = Convert.ToInt32(currentStudent.GetRoomNumber()) - 1;
-            if(todayToInt % totalStudents == x)
+            int x = currentStudent.GetId() - 1;
+            if (todayToInt % totalStudents == x)
             {
                 isCurrentStudentTurnToClean = true;
             }
@@ -51,7 +51,7 @@ namespace Project1
                 rbtnNo.Visible = false;
                 lblTrashOut.Visible = false;
             }
-            
+
         }
         void getTodayDate()
         {
@@ -59,7 +59,7 @@ namespace Project1
             today = today.Substring(0, 10);
             todayToInt = Convert.ToInt32(today.Substring(0, 2));
         }
-       
+
         private void btnSubmitGroceries_Click(object sender, EventArgs e)
         {
 
@@ -77,12 +77,13 @@ namespace Project1
             date = calendar.SelectionStart.ToString();
             date = date.Substring(0, 10);//I get the dd.MM.yyyy
             int count = await database.GetTotalStudents();
+            int currentStudentNumber = currentStudent.GetId();
+            currentStudentNumber--;
             day = date.Substring(0, 2);
             dayToInt = Convert.ToInt32(day);
             totalStudents = await database.GetTotalStudents();
-            int id = dayToInt%totalStudents;
+            int id = dayToInt % totalStudents;
             id++;
-            id = await database.GetIdByRoomId(id.ToString());
             string firstName = await database.GetFirstName(id);
             string roomNr = await database.GetRoomNumber(id);
             lblDateChanged.Text = "On " + date + " " + firstName + " (Room number: " + roomNr + ") should do the cleaning";
@@ -104,9 +105,9 @@ namespace Project1
         }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(rbtnYes.Checked)
+            if (rbtnYes.Checked)
             {
-                if(trashOk==true)
+                if (trashOk == true)
                 {
                     makeToolsInvisible();
                     lblTrashOut.Text = "Thank you!";
@@ -117,7 +118,7 @@ namespace Project1
                     MessageBox.Show("No, you did not take the trash out");
                 }
             }
-            if(rbtnNo.Checked)
+            if (rbtnNo.Checked)
             {
                 MessageBox.Show("Then you should");
             }
@@ -171,26 +172,13 @@ namespace Project1
                     lbAnnouncements.Items.Add(anno.GetInfo());
                 }
             }
-            
-
         }
 
-        private void Announcements_Click(object sender, EventArgs e)
+        private async void lbAnnouncements_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Announcement announcement = new Announcement(DateTime.Now.ToShortDateString(), currentStudent.GetFirstName(), null, null, currentStudent.GetId());
-            NewComplaint nc = new NewComplaint(announcement);
-            nc.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            OldComplaints oc = new OldComplaints(currentStudent.GetId());
-            oc.Show();
+            AnnouncementList annoList = await database.GetAllAnnouncements();
+            InfoForm infoForm = new InfoForm(annoList.GetAllInfo()[lbAnnouncements.SelectedIndex]);
+            infoForm.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
