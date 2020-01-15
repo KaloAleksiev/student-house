@@ -35,6 +35,7 @@
             this.lblAuthor = new System.Windows.Forms.Label();
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.tbText = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,7 @@
             this.tbText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
             this.tbText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbText.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.tbText.Location = new System.Drawing.Point(57, 204);
+            this.tbText.Location = new System.Drawing.Point(57, 187);
             this.tbText.Multiline = true;
             this.tbText.Name = "tbText";
             this.tbText.ReadOnly = true;
@@ -106,12 +107,26 @@
             this.tbText.TabIndex = 24;
             this.tbText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(57, 305);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(261, 37);
+            this.btnClose.TabIndex = 26;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // InfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(395, 335);
+            this.ClientSize = new System.Drawing.Size(395, 363);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbText);
             this.Controls.Add(this.tbTitle);
             this.Controls.Add(this.lblAuthor);
@@ -120,7 +135,6 @@
             this.Controls.Add(this.lblPage);
             this.Name = "InfoForm";
             this.Text = "InfoForm";
-            this.Click += new System.EventHandler(this.InfoForm_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +149,6 @@
         private System.Windows.Forms.Label lblAuthor;
         private System.Windows.Forms.TextBox tbTitle;
         private System.Windows.Forms.TextBox tbText;
+        private System.Windows.Forms.Button btnClose;
     }
 }

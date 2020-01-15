@@ -395,3 +395,41 @@ C:\Users\alexi\OneDrive\Desktop\New folder (5)\advanced-project---student-house\
 C:\Users\alexi\OneDrive\Desktop\New folder (5)\advanced-project---student-house\obj\Debug\Project1.ComplaintInfo.resources
 C:\Users\alexi\OneDrive\Desktop\New folder (5)\advanced-project---student-house\obj\Debug\Project1.NewComplaint.resources
 C:\Users\alexi\OneDrive\Desktop\New folder (5)\advanced-project---student-house\obj\Debug\Project1.OldComplaints.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\Project1.exe.config
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\Project1.exe
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\Project1.pdb
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\GraphQL-Parser.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\GraphQL.Client.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\GraphQL.Common.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\GraphQL.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Buffers.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Reactive.Core.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Reactive.Interfaces.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Reactive.Linq.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.ValueTuple.dll
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\GraphQL.Client.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\GraphQL.Common.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Buffers.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Reactive.Core.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Reactive.Interfaces.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.Reactive.Linq.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\bin\Debug\System.ValueTuple.xml
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.csprojAssemblyReference.cache
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Admin.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.AnnouncementForm.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.ComplaintInfo.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Form1.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Form2.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Schedule.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Groceries.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Form5.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.InfoForm.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.NewComplaint.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.OldComplaints.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.Properties.Resources.resources
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.csproj.GenerateResource.cache
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.csproj.CopyComplete
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.exe
+C:\Users\Verg\Desktop\Git Project\advanced-project---student-house\obj\Debug\Project1.pdb

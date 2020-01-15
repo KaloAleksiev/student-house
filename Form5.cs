@@ -149,8 +149,17 @@ namespace Project1
             tabControl.SelectTab("Groceries");
         }
 
-        private void btnAnnouncements_Click(object sender, EventArgs e)
+        private async void btnAnnouncements_Click(object sender, EventArgs e)
         {
+            lbAnnouncements.Items.Clear();
+            AnnouncementList annoList = await database.GetAllAnnouncements();
+            if (annoList != null)
+            {
+                foreach (Announcement anno in annoList.GetAllInfo())
+                {
+                    lbAnnouncements.Items.Add(anno.GetInfo());
+                }
+            }
             tabControl.SelectTab("Announcements");
         }
 
@@ -192,6 +201,24 @@ namespace Project1
         {
             OldComplaints oc = new OldComplaints(currentStudent.GetId());
             oc.Show();
+        }
+
+        private async void tabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbAnnouncements.Items.Clear();
+            AnnouncementList annoList = await database.GetAllAnnouncements();
+            if (annoList != null)
+            {
+                foreach (Announcement anno in annoList.GetAllInfo())
+                {
+                    lbAnnouncements.Items.Add(anno.GetInfo());
+                }
+            }
+        }
+
+        private void btnComplaints_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("Complaints");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
