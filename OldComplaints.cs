@@ -25,7 +25,7 @@ namespace Project1
         private async void showAllComplaints()
         {
             lbOldComplaints.Items.Clear();
-            complaintList = await database.GetAllComplaints(id);
+            complaintList = await database.GetAllComplaintsByStudentId(id);
             if (complaintList != null)
             {
                 foreach (Announcement complaint in complaintList.GetAllInfo())
@@ -50,8 +50,11 @@ namespace Project1
         private void lbOldComplaints_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             int index = lbOldComplaints.SelectedIndex;
-            ComplaintInfo cf = new ComplaintInfo(complaintList.GetComplaintAtIndex(index));
-            cf.Show();
+            if (lbOldComplaints.Items.Contains("You have no past complaint") == false)
+            {
+                ComplaintInfo cf = new ComplaintInfo(complaintList.GetComplaintAtIndex(index));
+                cf.Show();
+            }
         }
     }
 }

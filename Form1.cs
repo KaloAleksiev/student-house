@@ -44,6 +44,7 @@ namespace Project1
             {
                 Admin admin = new Admin();
                 admin.Show();
+                this.Hide();
             }
             else
             {

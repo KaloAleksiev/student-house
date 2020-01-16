@@ -227,14 +227,14 @@ namespace Project1
             
         }
 
-        public async Task<int> InsertNewComplaint(string time, string author, string title, string message, int id)
+        public async Task<int> InsertNewComplaint(string time, string author, string title, string message, int id, bool isOpen)
         {
             var heroRequest = new GraphQLRequest
             {
                 Query = @"
-                 mutation InsertComplaint($authorName: String, $complaintText: String, $date: String, $title: String, $authorId: Int) {
+                 mutation InsertComplaint($authorName: String, $complaintText: String, $date: String, $title: String, $authorId: Int, $isOpen: Boolean) {
                   __typename
-                  insert_Complaints(objects: {authorName: $authorName, complaintText: $complaintText, date: $date, title: $title, authorId: $authorId}) {
+                  insert_Complaints(objects: {authorName: $authorName, complaintText: $complaintText, date: $date, title: $title, authorId: $authorId, isOpen: $isOpen}) {
                     returning {
                       complaintId
                     }
@@ -246,7 +246,8 @@ namespace Project1
                     authorName = author,
                     authorId = id,
                     title = title,
-                    complaintText = message
+                    complaintText = message,
+                    isOpen = isOpen
                 }
             };
 
@@ -259,7 +260,7 @@ namespace Project1
             return complaints.First.id.Value;
         }
 
-        public async Task<AnnouncementList> GetAllComplaints(int id)
+        public async Task<AnnouncementList> GetAllComplaintsByStudentId(int id)
         {
             var heroRequest = new GraphQLRequest
             {
@@ -272,6 +273,7 @@ namespace Project1
                         date
                         title
                         authorName
+                        isOpen
                       }
                     }",
                 Variables = new
@@ -295,7 +297,8 @@ namespace Project1
                 Announcement complaint;
                 for (int i = 0; i < complaints.Count; i++)
                 {
-                    complaint = new Announcement(complaints[i].date.Value, complaints[i].authorName.Value, complaints[i].title.Value, (int)complaints[i].complaintId.Value, complaints[i].complaintText.Value);
+                   
+                    complaint = new Announcement(complaints[i].date.Value, complaints[i].authorName.Value, complaints[i].title.Value, (int)complaints[i].complaintId.Value, complaints[i].complaintText.Value, complaints[i].isOpen.Value);
                     complaintList.AddAnnouncement(complaint);
                 }
                 return complaintList;
@@ -303,7 +306,218 @@ namespace Project1
 
         }
 
+        public async Task<int> InsertNewStudent(string firstName, string lastName, string email, string password, string roomId)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation MyMutation2($firstName: String, $lastName: String, $email: String, $password: String, $roomId: String) {
+                      __typename
+                      insert_users(objects: {email: $email, firstName: $firstName, lastName: $lastName, password: $password, roomId: $roomId}) {
+                        returning {
+                          id
+                        }
+                      }
+                    }",
+                Variables = new
+                {
+                    firstName=firstName,
+                    lastName=lastName,
+                    email=email,
+                    password=password,
+                    roomId=roomId
+                }
+            };
 
 
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var users = graphQLResponse.Data.Users;
+
+
+
+            return Convert.ToInt32(users.First.id.Value);
+        }
+
+        public async Task<AnnouncementList> GetAllComplaints()
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                 query MyQuery6 {
+                      __typename
+                      Complaints(where: {isOpen: {_eq: true}}) {
+                        authorId
+                        authorName
+                        complaintId
+                        complaintText
+                        date
+                        title
+                      }
+                    }",
+    
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var complaints = graphQLResponse.Data.Complaints;
+
+
+
+            if (complaints.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                AnnouncementList complaintList = new AnnouncementList();
+                Announcement complaint;
+                for (int i = 0; i < complaints.Count; i++)
+                {
+
+                    complaint = new Announcement(complaints[i].date.Value, complaints[i].authorName.Value, complaints[i].title.Value, (int)complaints[i].complaintId.Value, complaints[i].complaintText.Value, true, (int)complaints[i].authorId.Value);
+                    complaintList.AddAnnouncement(complaint);
+                }
+                return complaintList;
+            }
+
+        }
+
+        public async Task<int> InsertNewAnswer(string answer, int complaintId)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation MyMutation3($answer: String, $complaintId: Int) {
+                      __typename
+                      insert_complaintAnswer(objects: {answer: $answer, complaintId: $complaintId}) {
+                        returning {
+                          id
+                        }
+                      }
+                    }",
+                Variables = new
+                {
+                    answer=answer,
+                    complaintId=complaintId
+                }
+            };
+
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var complaintAnswer = graphQLResponse.Data.complaintAnswer;
+
+
+
+            return Convert.ToInt32(complaintAnswer.First.id.Value);
+        }
+
+        public async Task<int> CloseComplaint(int complaintId)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation MyMutation4($complaintId: Int) {
+                      __typename
+                      update_Complaints(where: {complaintId: {_eq: $complaintId}}, _set: {isOpen: false}) {
+                        affected_rows
+                        returning {
+                          complaintId
+                        }
+                      }
+                    }
+                    ",
+                Variables = new
+                {
+                    complaintId = complaintId
+                }
+            };
+
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var complaint = graphQLResponse.Data.Complaint;
+
+
+
+            return Convert.ToInt32(complaint.First.complaintId.Value);
+        }
+
+
+        public async Task<string> GetAdminAnswer(int complaintId)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                 query MyQuery6($complaintId: Int) {
+                      __typename
+                      complaintAnswer(where: {complaintId: {_eq: $complaintId}}) {
+                        answer
+                      }
+                    }",
+
+                Variables = new
+                {
+                    complaintId = complaintId
+                }
+
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var complaintAnswer = graphQLResponse.Data.complaintAnswer;
+
+
+
+            if (complaintAnswer.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                
+                return complaintAnswer.First.answer.Value;
+            }
+
+        }
+
+        public async Task<AnnouncementList> GetAllClosedComplaints()
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                 query MyQuery6 {
+                      __typename
+                      Complaints(where: {isOpen: {_eq: false}}) {
+                        authorId
+                        authorName
+                        complaintId
+                        complaintText
+                        date
+                        title
+                      }
+                    }",
+
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            var complaints = graphQLResponse.Data.Complaints;
+
+
+
+            if (complaints.Count == 0)
+            {
+                return null;
+            }
+            else
+            {
+                AnnouncementList complaintList = new AnnouncementList();
+                Announcement complaint;
+                for (int i = 0; i < complaints.Count; i++)
+                {
+
+                    complaint = new Announcement(complaints[i].date.Value, complaints[i].authorName.Value, complaints[i].title.Value, (int)complaints[i].complaintId.Value, complaints[i].complaintText.Value, false, (int)complaints[i].authorId.Value);
+                    complaintList.AddAnnouncement(complaint);
+                }
+                return complaintList;
+            }
+
+        }
     }
 }

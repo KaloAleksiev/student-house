@@ -14,6 +14,8 @@ namespace Project1
         private string message;
         private int id;
         private int complaintId;
+        private int studentId;
+        private bool isOpen;
 
         public Announcement(string time, string author, string title, string message)
         {
@@ -22,22 +24,35 @@ namespace Project1
             this.title = title;
             this.message = message;
         }
-        public Announcement(string time, string author, string title, string message, int id)
+        public Announcement(string time, string author, string title, string message, int id, bool isOpen)
         {
             this.time = time;
             this.author = author;
             this.title = title;
             this.message = message;
             this.id = id;
+            this.isOpen = isOpen;
         }
-        public Announcement(string time, string author, string title, int complaintId, string message)
+        public Announcement(string time, string author, string title, int complaintId, string message, bool isOpen)
         {
             this.time = time;
             this.author = author;
             this.title = title;
             this.message = message;
             this.complaintId = complaintId;
+            this.isOpen = isOpen;
         }
+        public Announcement(string time, string author, string title, int complaintId, string message, bool isOpen, int studentId)
+        {
+            this.time = time;
+            this.author = author;
+            this.title = title;
+            this.message = message;
+            this.complaintId = complaintId;
+            this.isOpen = isOpen;
+            this.studentId = studentId;
+        }
+
 
         public void SetTitle(string title)
         {
@@ -86,9 +101,24 @@ namespace Project1
         {
             return complaintId.ToString();
         }
+        public bool IsOpen()
+        {
+            return isOpen;
+        }
+        public int GetAuthorId()
+        {
+            return studentId;
+        }
         public string GetComplaintInfo()
         {
-            return "#" + this.complaintId + " " + this.time + " " + this.author + " " + this.title;
+            if (isOpen)
+            {
+                return "#" + this.complaintId + " OPEN " + this.time + " " + this.title;
+            }
+            else
+            {
+                return "#" + this.complaintId + " CLOSED " + this.time + " " + this.title;
+            }
         }
     }
 }

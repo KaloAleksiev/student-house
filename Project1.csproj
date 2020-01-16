@@ -82,6 +82,30 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminClosedComplaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminClosedComplaints.Designer.cs">
+      <DependentUpon>AdminClosedComplaints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminClosedInfoComplaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminClosedInfoComplaint.Designer.cs">
+      <DependentUpon>AdminClosedInfoComplaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminInfoComplaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminInfoComplaint.Designer.cs">
+      <DependentUpon>AdminInfoComplaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminOpenComplaints.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminOpenComplaints.Designer.cs">
+      <DependentUpon>AdminOpenComplaints.cs</DependentUpon>
+    </Compile>
     <Compile Include="Announcement.cs" />
     <Compile Include="AnnouncementForm.cs">
       <SubType>Form</SubType>
@@ -154,6 +178,18 @@
     <Compile Include="Trash.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminClosedComplaints.resx">
+      <DependentUpon>AdminClosedComplaints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminClosedInfoComplaint.resx">
+      <DependentUpon>AdminClosedInfoComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminInfoComplaint.resx">
+      <DependentUpon>AdminInfoComplaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminOpenComplaints.resx">
+      <DependentUpon>AdminOpenComplaints.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnnouncementForm.resx">
       <DependentUpon>AnnouncementForm.cs</DependentUpon>

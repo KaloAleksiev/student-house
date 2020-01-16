@@ -10,43 +10,37 @@ using System.Windows.Forms;
 
 namespace Project1
 {
-    public partial class ComplaintInfo : Form
+    public partial class AdminClosedInfoComplaint : Form
     {
         Announcement complaint;
         Database database = new Database();
-        public ComplaintInfo(Announcement complaint)
+        public AdminClosedInfoComplaint(Announcement complaint)
         {
             InitializeComponent();
             this.complaint = complaint;
+            this.complaint = complaint;
             lblDate.Text = complaint.GetDate();
             lblTitle.Text = complaint.GetTitle();
+            lblName.Text = complaint.GetAuthor();
+            lblId.Text = complaint.GetAuthorId().ToString();
             tbComplaint.Text = complaint.GetMessage();
-            if(complaint.IsOpen())
-            {
-                lblStatus.Text = "Open";
-                tbAdminAnswer.Text = "The administrator has not responded yet";
-            }
-            else
-            {
-                lblStatus.Text = "Closed";
-                adminAnswer();
-            }
+            lblStatus.Text = "Closed";
             lblAnnouncements.Text = "Complaint #" + complaint.GetComplaintId();
+            answer();
         }
-
-        private async void adminAnswer()
+        private async void answer()
         {
-            string answer = await database.GetAdminAnswer(Convert.ToInt32(complaint.GetComplaintId()));
-            tbAdminAnswer.Text = answer;
+            string ans = await database.GetAdminAnswer(Convert.ToInt32(complaint.GetComplaintId()));
+            tbAnswer.Text = ans;
 
         }
 
-        private void ComplaintInfo_Load(object sender, EventArgs e)
+        private void lblStatus_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

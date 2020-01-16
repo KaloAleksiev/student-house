@@ -192,7 +192,7 @@ namespace Project1
 
         private void btnCreateComplaint_Click(object sender, EventArgs e)
         {
-            Announcement announcement = new Announcement(DateTime.Now.ToShortDateString(), currentStudent.GetFirstName(), null, null, currentStudent.GetId());
+            Announcement announcement = new Announcement(DateTime.Now.ToShortDateString(), currentStudent.GetFirstName(), null, null, currentStudent.GetId(), true);
             NewComplaint nc = new NewComplaint(announcement);
             nc.Show();
         }

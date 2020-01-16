@@ -31,7 +31,7 @@ namespace Project1
             {
                 announcement.SetTitle(tbComplaintTitle.Text);
                 announcement.SetMessage(tbComplaintText.Text);
-                database.InsertNewComplaint(announcement.GetTime(), announcement.GetAuthor(), announcement.GetTitle(), announcement.GetMessage(), announcement.GetId());
+                database.InsertNewComplaint(announcement.GetTime(), announcement.GetAuthor(), announcement.GetTitle(), announcement.GetMessage(), announcement.GetId(), announcement.IsOpen());
                 this.Close();
             }
             else
