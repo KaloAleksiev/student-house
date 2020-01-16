@@ -58,6 +58,13 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.Announcements = new System.Windows.Forms.TabPage();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnAnnouncement = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblAnnouncements = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lbAnnouncements = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
@@ -66,6 +73,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.complaints.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.Announcements.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -108,6 +117,7 @@
             this.tabControl1.Controls.Add(this.Home);
             this.tabControl1.Controls.Add(this.Register);
             this.tabControl1.Controls.Add(this.complaints);
+            this.tabControl1.Controls.Add(this.Announcements);
             this.tabControl1.Location = new System.Drawing.Point(0, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -383,6 +393,97 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Complaints";
             // 
+            // Announcements
+            // 
+            this.Announcements.Controls.Add(this.btnRefresh);
+            this.Announcements.Controls.Add(this.btnAnnouncement);
+            this.Announcements.Controls.Add(this.label12);
+            this.Announcements.Controls.Add(this.lblAnnouncements);
+            this.Announcements.Controls.Add(this.pictureBox5);
+            this.Announcements.Controls.Add(this.lbAnnouncements);
+            this.Announcements.Location = new System.Drawing.Point(4, 25);
+            this.Announcements.Name = "Announcements";
+            this.Announcements.Size = new System.Drawing.Size(761, 524);
+            this.Announcements.TabIndex = 3;
+            this.Announcements.Text = "Announcements";
+            this.Announcements.UseVisualStyleBackColor = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(518, 206);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(209, 54);
+            this.btnRefresh.TabIndex = 25;
+            this.btnRefresh.Text = "Refresh List";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnAnnouncement
+            // 
+            this.btnAnnouncement.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAnnouncement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnouncement.ForeColor = System.Drawing.Color.White;
+            this.btnAnnouncement.Location = new System.Drawing.Point(518, 424);
+            this.btnAnnouncement.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnnouncement.Name = "btnAnnouncement";
+            this.btnAnnouncement.Size = new System.Drawing.Size(209, 80);
+            this.btnAnnouncement.TabIndex = 24;
+            this.btnAnnouncement.Text = "New Announcement";
+            this.btnAnnouncement.UseVisualStyleBackColor = false;
+            this.btnAnnouncement.Click += new System.EventHandler(this.btnAnnouncement_Click_1);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Gold;
+            this.label12.Location = new System.Drawing.Point(210, 21);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(331, 60);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Student House";
+            // 
+            // lblAnnouncements
+            // 
+            this.lblAnnouncements.AutoSize = true;
+            this.lblAnnouncements.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnnouncements.ForeColor = System.Drawing.Color.Blue;
+            this.lblAnnouncements.Location = new System.Drawing.Point(210, 99);
+            this.lblAnnouncements.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnnouncements.Name = "lblAnnouncements";
+            this.lblAnnouncements.Size = new System.Drawing.Size(329, 54);
+            this.lblAnnouncements.TabIndex = 22;
+            this.lblAnnouncements.Text = "Announcements";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(33, 21);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(141, 134);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 21;
+            this.pictureBox5.TabStop = false;
+            // 
+            // lbAnnouncements
+            // 
+            this.lbAnnouncements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.lbAnnouncements.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAnnouncements.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.lbAnnouncements.FormattingEnabled = true;
+            this.lbAnnouncements.ItemHeight = 21;
+            this.lbAnnouncements.Location = new System.Drawing.Point(33, 206);
+            this.lbAnnouncements.Margin = new System.Windows.Forms.Padding(4);
+            this.lbAnnouncements.Name = "lbAnnouncements";
+            this.lbAnnouncements.Size = new System.Drawing.Size(463, 277);
+            this.lbAnnouncements.TabIndex = 20;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -407,6 +508,9 @@
             this.complaints.ResumeLayout(false);
             this.complaints.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.Announcements.ResumeLayout(false);
+            this.Announcements.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +547,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnSeeClosedComplaints;
+        private System.Windows.Forms.TabPage Announcements;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnAnnouncement;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblAnnouncements;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.ListBox lbAnnouncements;
     }
 }

@@ -16,6 +16,7 @@ namespace Project1
         public Admin()
         {
             InitializeComponent();
+            addAnnouncements();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -62,6 +63,48 @@ namespace Project1
         {
             AdminClosedComplaints acc = new AdminClosedComplaints();
             acc.Show();
+        }
+
+        private void btnAnnouncement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbAnnouncements_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAnnouncement_Click_1(object sender, EventArgs e)
+        {
+            Announcement announcement = new Announcement(DateTime.Now.ToShortDateString(), "Administrator", null, null);
+            AnnouncementForm announcementForm = new AnnouncementForm(announcement);
+            announcementForm.Show();
+        }
+
+        private async void addAnnouncements()
+        {
+            lbAnnouncements.Items.Clear();
+            AnnouncementList annoList = await database.GetAllAnnouncements();
+            if (annoList != null)
+            {
+                foreach (Announcement anno in annoList.GetAllInfo())
+                {
+                    lbAnnouncements.Items.Add(anno.GetInfo());
+                }
+            }
+        }
+        private async void btnRefresh_Click(object sender, EventArgs e)
+        {
+            lbAnnouncements.Items.Clear();
+            AnnouncementList annoList = await database.GetAllAnnouncements();
+            if (annoList != null)
+            {
+                foreach (Announcement anno in annoList.GetAllInfo())
+                {
+                    lbAnnouncements.Items.Add(anno.GetInfo());
+                }
+            }
         }
     }
 }
