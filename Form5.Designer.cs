@@ -61,12 +61,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.tbxPurchase = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbSubstractAmount = new System.Windows.Forms.TextBox();
-            this.btnSubstract = new System.Windows.Forms.Button();
-            this.clbGroceries = new System.Windows.Forms.CheckedListBox();
+            this.btnPay = new System.Windows.Forms.Button();
             this.btnSubmitGroceries = new System.Windows.Forms.Button();
             this.tbPrice = new System.Windows.Forms.TextBox();
             this.Announcements = new System.Windows.Forms.TabPage();
@@ -85,6 +84,10 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lsbGroceriesPayments = new System.Windows.Forms.ListBox();
+            this.lsbGroceriesStudents = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.Home.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,12 +113,11 @@
             this.tabControl.Controls.Add(this.Complaints);
             this.tabControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl.Location = new System.Drawing.Point(-4, -5);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Location = new System.Drawing.Point(-3, -4);
             this.tabControl.Multiline = true;
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(769, 576);
+            this.tabControl.Size = new System.Drawing.Size(577, 468);
             this.tabControl.TabIndex = 0;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -128,11 +130,10 @@
             this.Home.Controls.Add(this.panel2);
             this.Home.Controls.Add(this.pictureBox1);
             this.Home.Controls.Add(this.lblStudentHouse);
-            this.Home.Location = new System.Drawing.Point(4, 30);
-            this.Home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Home.Location = new System.Drawing.Point(4, 26);
             this.Home.Name = "Home";
-            this.Home.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Home.Size = new System.Drawing.Size(761, 542);
+            this.Home.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Home.Size = new System.Drawing.Size(569, 438);
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.Click += new System.EventHandler(this.Home_Click);
@@ -142,10 +143,9 @@
             this.lblDateTime.AutoSize = true;
             this.lblDateTime.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTime.ForeColor = System.Drawing.Color.Blue;
-            this.lblDateTime.Location = new System.Drawing.Point(497, 108);
-            this.lblDateTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateTime.Location = new System.Drawing.Point(373, 88);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(0, 50);
+            this.lblDateTime.Size = new System.Drawing.Size(0, 40);
             this.lblDateTime.TabIndex = 12;
             // 
             // lblStHouse
@@ -153,10 +153,9 @@
             this.lblStHouse.AutoSize = true;
             this.lblStHouse.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStHouse.ForeColor = System.Drawing.Color.Gold;
-            this.lblStHouse.Location = new System.Drawing.Point(203, 30);
-            this.lblStHouse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStHouse.Location = new System.Drawing.Point(152, 24);
             this.lblStHouse.Name = "lblStHouse";
-            this.lblStHouse.Size = new System.Drawing.Size(331, 60);
+            this.lblStHouse.Size = new System.Drawing.Size(263, 47);
             this.lblStHouse.TabIndex = 11;
             this.lblStHouse.Text = "Student House";
             // 
@@ -165,10 +164,9 @@
             this.lblPage.AutoSize = true;
             this.lblPage.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPage.ForeColor = System.Drawing.Color.Blue;
-            this.lblPage.Location = new System.Drawing.Point(203, 108);
-            this.lblPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPage.Location = new System.Drawing.Point(152, 88);
             this.lblPage.Name = "lblPage";
-            this.lblPage.Size = new System.Drawing.Size(222, 50);
+            this.lblPage.Size = new System.Drawing.Size(175, 40);
             this.lblPage.TabIndex = 10;
             this.lblPage.Text = "Home Page";
             // 
@@ -178,10 +176,9 @@
             this.panel2.Controls.Add(this.btnCleaningSchedule);
             this.panel2.Controls.Add(this.btnGroceries);
             this.panel2.Controls.Add(this.btnAnnouncements);
-            this.panel2.Location = new System.Drawing.Point(73, 318);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(55, 258);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(596, 210);
+            this.panel2.Size = new System.Drawing.Size(447, 171);
             this.panel2.TabIndex = 7;
             // 
             // btnComplaints
@@ -189,10 +186,10 @@
             this.btnComplaints.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnComplaints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnComplaints.Location = new System.Drawing.Point(365, 121);
-            this.btnComplaints.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnComplaints.Location = new System.Drawing.Point(274, 98);
+            this.btnComplaints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnComplaints.Name = "btnComplaints";
-            this.btnComplaints.Size = new System.Drawing.Size(207, 69);
+            this.btnComplaints.Size = new System.Drawing.Size(155, 56);
             this.btnComplaints.TabIndex = 5;
             this.btnComplaints.Text = "Complaints";
             this.btnComplaints.UseVisualStyleBackColor = false;
@@ -203,10 +200,10 @@
             this.btnCleaningSchedule.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCleaningSchedule.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCleaningSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnCleaningSchedule.Location = new System.Drawing.Point(15, 21);
-            this.btnCleaningSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCleaningSchedule.Location = new System.Drawing.Point(11, 17);
+            this.btnCleaningSchedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCleaningSchedule.Name = "btnCleaningSchedule";
-            this.btnCleaningSchedule.Size = new System.Drawing.Size(207, 69);
+            this.btnCleaningSchedule.Size = new System.Drawing.Size(155, 56);
             this.btnCleaningSchedule.TabIndex = 2;
             this.btnCleaningSchedule.Text = "Cleaning Schedule";
             this.btnCleaningSchedule.UseVisualStyleBackColor = false;
@@ -217,10 +214,10 @@
             this.btnGroceries.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnGroceries.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroceries.ForeColor = System.Drawing.Color.White;
-            this.btnGroceries.Location = new System.Drawing.Point(365, 21);
-            this.btnGroceries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGroceries.Location = new System.Drawing.Point(274, 17);
+            this.btnGroceries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGroceries.Name = "btnGroceries";
-            this.btnGroceries.Size = new System.Drawing.Size(207, 69);
+            this.btnGroceries.Size = new System.Drawing.Size(155, 56);
             this.btnGroceries.TabIndex = 4;
             this.btnGroceries.Text = "Groceries";
             this.btnGroceries.UseVisualStyleBackColor = false;
@@ -231,10 +228,10 @@
             this.btnAnnouncements.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnAnnouncements.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnouncements.ForeColor = System.Drawing.Color.White;
-            this.btnAnnouncements.Location = new System.Drawing.Point(15, 121);
-            this.btnAnnouncements.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnnouncements.Location = new System.Drawing.Point(11, 98);
+            this.btnAnnouncements.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAnnouncements.Name = "btnAnnouncements";
-            this.btnAnnouncements.Size = new System.Drawing.Size(207, 69);
+            this.btnAnnouncements.Size = new System.Drawing.Size(155, 56);
             this.btnAnnouncements.TabIndex = 3;
             this.btnAnnouncements.Text = "Announcements";
             this.btnAnnouncements.UseVisualStyleBackColor = false;
@@ -243,10 +240,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(29, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(106, 109);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
@@ -256,10 +252,9 @@
             this.lblStudentHouse.AutoSize = true;
             this.lblStudentHouse.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudentHouse.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblStudentHouse.Location = new System.Drawing.Point(141, 228);
-            this.lblStudentHouse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStudentHouse.Location = new System.Drawing.Point(106, 185);
             this.lblStudentHouse.Name = "lblStudentHouse";
-            this.lblStudentHouse.Size = new System.Drawing.Size(0, 54);
+            this.lblStudentHouse.Size = new System.Drawing.Size(0, 45);
             this.lblStudentHouse.TabIndex = 6;
             this.lblStudentHouse.Click += new System.EventHandler(this.lblStudentHouse_Click);
             // 
@@ -270,11 +265,10 @@
             this.Schedule.Controls.Add(this.label1);
             this.Schedule.Controls.Add(this.label2);
             this.Schedule.Controls.Add(this.pictureBox2);
-            this.Schedule.Location = new System.Drawing.Point(4, 30);
-            this.Schedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Schedule.Location = new System.Drawing.Point(4, 26);
             this.Schedule.Name = "Schedule";
-            this.Schedule.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Schedule.Size = new System.Drawing.Size(761, 542);
+            this.Schedule.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Schedule.Size = new System.Drawing.Size(569, 438);
             this.Schedule.TabIndex = 1;
             this.Schedule.Text = "Schedule";
             // 
@@ -289,28 +283,29 @@
             this.panel1.Controls.Add(this.lblNextClean);
             this.panel1.Controls.Add(this.lblAnn);
             this.panel1.Controls.Add(this.calendar);
-            this.panel1.Location = new System.Drawing.Point(15, 215);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(11, 175);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 289);
+            this.panel1.Size = new System.Drawing.Size(549, 235);
             this.panel1.TabIndex = 15;
             // 
             // lblDateChanged
             // 
             this.lblDateChanged.AutoSize = true;
             this.lblDateChanged.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDateChanged.Location = new System.Drawing.Point(32, 254);
+            this.lblDateChanged.Location = new System.Drawing.Point(24, 206);
+            this.lblDateChanged.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateChanged.Name = "lblDateChanged";
-            this.lblDateChanged.Size = new System.Drawing.Size(0, 23);
+            this.lblDateChanged.Size = new System.Drawing.Size(0, 17);
             this.lblDateChanged.TabIndex = 12;
             // 
             // lblWhoCleansToday
             // 
             this.lblWhoCleansToday.AutoSize = true;
             this.lblWhoCleansToday.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblWhoCleansToday.Location = new System.Drawing.Point(316, 95);
+            this.lblWhoCleansToday.Location = new System.Drawing.Point(237, 77);
+            this.lblWhoCleansToday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWhoCleansToday.Name = "lblWhoCleansToday";
-            this.lblWhoCleansToday.Size = new System.Drawing.Size(0, 23);
+            this.lblWhoCleansToday.Size = new System.Drawing.Size(0, 17);
             this.lblWhoCleansToday.TabIndex = 11;
             this.lblWhoCleansToday.Visible = false;
             // 
@@ -319,10 +314,10 @@
             this.btnSubmit.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(451, 192);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(338, 156);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(167, 39);
+            this.btnSubmit.Size = new System.Drawing.Size(125, 32);
             this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -333,10 +328,10 @@
             this.rbtnNo.AutoSize = true;
             this.rbtnNo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnNo.ForeColor = System.Drawing.SystemColors.Control;
-            this.rbtnNo.Location = new System.Drawing.Point(551, 156);
-            this.rbtnNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbtnNo.Location = new System.Drawing.Point(413, 127);
+            this.rbtnNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnNo.Name = "rbtnNo";
-            this.rbtnNo.Size = new System.Drawing.Size(60, 32);
+            this.rbtnNo.Size = new System.Drawing.Size(50, 25);
             this.rbtnNo.TabIndex = 9;
             this.rbtnNo.TabStop = true;
             this.rbtnNo.Text = "No";
@@ -347,10 +342,10 @@
             this.rbtnYes.AutoSize = true;
             this.rbtnYes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbtnYes.ForeColor = System.Drawing.SystemColors.Control;
-            this.rbtnYes.Location = new System.Drawing.Point(451, 156);
-            this.rbtnYes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbtnYes.Location = new System.Drawing.Point(338, 127);
+            this.rbtnYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbtnYes.Name = "rbtnYes";
-            this.rbtnYes.Size = new System.Drawing.Size(63, 32);
+            this.rbtnYes.Size = new System.Drawing.Size(52, 25);
             this.rbtnYes.TabIndex = 8;
             this.rbtnYes.TabStop = true;
             this.rbtnYes.Text = "Yes";
@@ -361,9 +356,10 @@
             this.lblTrashOut.AutoSize = true;
             this.lblTrashOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrashOut.ForeColor = System.Drawing.Color.Blue;
-            this.lblTrashOut.Location = new System.Drawing.Point(349, 128);
+            this.lblTrashOut.Location = new System.Drawing.Point(262, 104);
+            this.lblTrashOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrashOut.Name = "lblTrashOut";
-            this.lblTrashOut.Size = new System.Drawing.Size(328, 28);
+            this.lblTrashOut.Size = new System.Drawing.Size(259, 21);
             this.lblTrashOut.TabIndex = 7;
             this.lblTrashOut.Text = "Have you taken the trash out today?";
             // 
@@ -372,9 +368,10 @@
             this.lblNextClean.AutoSize = true;
             this.lblNextClean.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNextClean.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblNextClean.Location = new System.Drawing.Point(347, 65);
+            this.lblNextClean.Location = new System.Drawing.Point(260, 53);
+            this.lblNextClean.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNextClean.Name = "lblNextClean";
-            this.lblNextClean.Size = new System.Drawing.Size(347, 28);
+            this.lblNextClean.Size = new System.Drawing.Size(277, 21);
             this.lblNextClean.TabIndex = 6;
             this.lblNextClean.Text = "Wash the dishes and take the trash out";
             // 
@@ -383,9 +380,10 @@
             this.lblAnn.AutoSize = true;
             this.lblAnn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnn.ForeColor = System.Drawing.Color.Blue;
-            this.lblAnn.Location = new System.Drawing.Point(347, 30);
+            this.lblAnn.Location = new System.Drawing.Point(260, 24);
+            this.lblAnn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnn.Name = "lblAnn";
-            this.lblAnn.Size = new System.Drawing.Size(174, 28);
+            this.lblAnn.Size = new System.Drawing.Size(139, 21);
             this.lblAnn.TabIndex = 5;
             this.lblAnn.Text = "Today\'s chores for ";
             // 
@@ -393,7 +391,8 @@
             // 
             this.calendar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
             this.calendar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.calendar.Location = new System.Drawing.Point(35, 27);
+            this.calendar.Location = new System.Drawing.Point(26, 22);
+            this.calendar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.calendar.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.calendar.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.calendar.Name = "calendar";
@@ -405,10 +404,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(203, 30);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(152, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(331, 60);
+            this.label1.Size = new System.Drawing.Size(263, 47);
             this.label1.TabIndex = 14;
             this.label1.Text = "Student House";
             // 
@@ -417,20 +415,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(203, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(152, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(367, 54);
+            this.label2.Size = new System.Drawing.Size(293, 45);
             this.label2.TabIndex = 13;
             this.label2.Text = "Cleaning Schedule";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(29, 30);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(22, 24);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(141, 134);
+            this.pictureBox2.Size = new System.Drawing.Size(106, 109);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
@@ -442,10 +438,9 @@
             this.Groceries.Controls.Add(this.label6);
             this.Groceries.Controls.Add(this.pictureBox3);
             this.Groceries.Controls.Add(this.panel3);
-            this.Groceries.Location = new System.Drawing.Point(4, 30);
-            this.Groceries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Groceries.Location = new System.Drawing.Point(4, 26);
             this.Groceries.Name = "Groceries";
-            this.Groceries.Size = new System.Drawing.Size(761, 542);
+            this.Groceries.Size = new System.Drawing.Size(569, 438);
             this.Groceries.TabIndex = 2;
             this.Groceries.Text = "Groceries";
             // 
@@ -454,10 +449,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gold;
-            this.label5.Location = new System.Drawing.Point(204, 28);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(153, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(331, 60);
+            this.label5.Size = new System.Drawing.Size(263, 47);
             this.label5.TabIndex = 17;
             this.label5.Text = "Student House";
             // 
@@ -466,57 +460,57 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(204, 107);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(153, 87);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 54);
+            this.label6.Size = new System.Drawing.Size(199, 45);
             this.label6.TabIndex = 16;
             this.label6.Text = "Grocery List";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(31, 28);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 23);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(141, 134);
+            this.pictureBox3.Size = new System.Drawing.Size(106, 109);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.richTextBox1);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.lsbGroceriesStudents);
+            this.panel3.Controls.Add(this.lsbGroceriesPayments);
+            this.panel3.Controls.Add(this.tbxPurchase);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.tbSubstractAmount);
-            this.panel3.Controls.Add(this.btnSubstract);
-            this.panel3.Controls.Add(this.clbGroceries);
+            this.panel3.Controls.Add(this.btnPay);
             this.panel3.Controls.Add(this.btnSubmitGroceries);
             this.panel3.Controls.Add(this.tbPrice);
-            this.panel3.Location = new System.Drawing.Point(31, 194);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(23, 158);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(691, 314);
+            this.panel3.Size = new System.Drawing.Size(518, 255);
             this.panel3.TabIndex = 3;
             // 
-            // richTextBox1
+            // tbxPurchase
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(148, 28);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(116, 78);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.tbxPurchase.Location = new System.Drawing.Point(0, 33);
+            this.tbxPurchase.Name = "tbxPurchase";
+            this.tbxPurchase.Size = new System.Drawing.Size(163, 22);
+            this.tbxPurchase.TabIndex = 12;
+            this.tbxPurchase.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label3.Location = new System.Drawing.Point(59, 145);
+            this.label3.Location = new System.Drawing.Point(213, 1);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 37);
+            this.label3.Size = new System.Drawing.Size(62, 30);
             this.label3.TabIndex = 10;
             this.label3.Text = "Cost:";
             // 
@@ -525,53 +519,45 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label4.Location = new System.Drawing.Point(3, 46);
+            this.label4.Location = new System.Drawing.Point(2, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 37);
+            this.label4.Size = new System.Drawing.Size(107, 30);
             this.label4.TabIndex = 9;
             this.label4.Text = "Purchase:";
             // 
             // tbSubstractAmount
             // 
-            this.tbSubstractAmount.Location = new System.Drawing.Point(539, 181);
-            this.tbSubstractAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSubstractAmount.Location = new System.Drawing.Point(430, 125);
+            this.tbSubstractAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbSubstractAmount.Multiline = true;
             this.tbSubstractAmount.Name = "tbSubstractAmount";
-            this.tbSubstractAmount.Size = new System.Drawing.Size(116, 36);
+            this.tbSubstractAmount.Size = new System.Drawing.Size(88, 30);
             this.tbSubstractAmount.TabIndex = 8;
             // 
-            // btnSubstract
+            // btnPay
             // 
-            this.btnSubstract.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnSubstract.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubstract.ForeColor = System.Drawing.Color.White;
-            this.btnSubstract.Location = new System.Drawing.Point(539, 234);
-            this.btnSubstract.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSubstract.Name = "btnSubstract";
-            this.btnSubstract.Size = new System.Drawing.Size(117, 46);
-            this.btnSubstract.TabIndex = 7;
-            this.btnSubstract.Text = "Subtract";
-            this.btnSubstract.UseVisualStyleBackColor = false;
-            // 
-            // clbGroceries
-            // 
-            this.clbGroceries.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clbGroceries.FormattingEnabled = true;
-            this.clbGroceries.Location = new System.Drawing.Point(297, 28);
-            this.clbGroceries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.clbGroceries.Name = "clbGroceries";
-            this.clbGroceries.Size = new System.Drawing.Size(212, 196);
-            this.clbGroceries.TabIndex = 5;
+            this.btnPay.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.Location = new System.Drawing.Point(430, 176);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(88, 37);
+            this.btnPay.TabIndex = 7;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnSubmitGroceries
             // 
             this.btnSubmitGroceries.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnSubmitGroceries.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitGroceries.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitGroceries.Location = new System.Drawing.Point(37, 213);
-            this.btnSubmitGroceries.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSubmitGroceries.Location = new System.Drawing.Point(345, 14);
+            this.btnSubmitGroceries.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSubmitGroceries.Name = "btnSubmitGroceries";
-            this.btnSubmitGroceries.Size = new System.Drawing.Size(228, 66);
+            this.btnSubmitGroceries.Size = new System.Drawing.Size(171, 39);
             this.btnSubmitGroceries.TabIndex = 4;
             this.btnSubmitGroceries.Text = "Submit Purchase";
             this.btnSubmitGroceries.UseVisualStyleBackColor = false;
@@ -579,11 +565,11 @@
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(148, 145);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbPrice.Location = new System.Drawing.Point(217, 32);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPrice.Multiline = true;
             this.tbPrice.Name = "tbPrice";
-            this.tbPrice.Size = new System.Drawing.Size(116, 36);
+            this.tbPrice.Size = new System.Drawing.Size(88, 24);
             this.tbPrice.TabIndex = 1;
             // 
             // Announcements
@@ -595,10 +581,9 @@
             this.Announcements.Controls.Add(this.lblAnnouncements);
             this.Announcements.Controls.Add(this.pictureBox4);
             this.Announcements.Controls.Add(this.lbAnnouncements);
-            this.Announcements.Location = new System.Drawing.Point(4, 30);
-            this.Announcements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Announcements.Location = new System.Drawing.Point(4, 26);
             this.Announcements.Name = "Announcements";
-            this.Announcements.Size = new System.Drawing.Size(761, 542);
+            this.Announcements.Size = new System.Drawing.Size(569, 438);
             this.Announcements.TabIndex = 3;
             this.Announcements.Text = "Announcements";
             this.Announcements.Click += new System.EventHandler(this.Announcements_Click);
@@ -608,10 +593,9 @@
             this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(517, 215);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Location = new System.Drawing.Point(388, 175);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(209, 54);
+            this.btnRefresh.Size = new System.Drawing.Size(157, 44);
             this.btnRefresh.TabIndex = 19;
             this.btnRefresh.Text = "Refresh List";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -622,10 +606,9 @@
             this.btnAnnouncement.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnAnnouncement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnouncement.ForeColor = System.Drawing.Color.White;
-            this.btnAnnouncement.Location = new System.Drawing.Point(517, 433);
-            this.btnAnnouncement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAnnouncement.Location = new System.Drawing.Point(388, 352);
             this.btnAnnouncement.Name = "btnAnnouncement";
-            this.btnAnnouncement.Size = new System.Drawing.Size(209, 80);
+            this.btnAnnouncement.Size = new System.Drawing.Size(157, 65);
             this.btnAnnouncement.TabIndex = 18;
             this.btnAnnouncement.Text = "New Announcement";
             this.btnAnnouncement.UseVisualStyleBackColor = false;
@@ -636,10 +619,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gold;
-            this.label7.Location = new System.Drawing.Point(209, 30);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(157, 24);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(331, 60);
+            this.label7.Size = new System.Drawing.Size(263, 47);
             this.label7.TabIndex = 17;
             this.label7.Text = "Student House";
             // 
@@ -648,20 +630,18 @@
             this.lblAnnouncements.AutoSize = true;
             this.lblAnnouncements.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnnouncements.ForeColor = System.Drawing.Color.Blue;
-            this.lblAnnouncements.Location = new System.Drawing.Point(209, 108);
-            this.lblAnnouncements.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAnnouncements.Location = new System.Drawing.Point(157, 88);
             this.lblAnnouncements.Name = "lblAnnouncements";
-            this.lblAnnouncements.Size = new System.Drawing.Size(329, 54);
+            this.lblAnnouncements.Size = new System.Drawing.Size(262, 45);
             this.lblAnnouncements.TabIndex = 16;
             this.lblAnnouncements.Text = "Announcements";
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(32, 30);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(24, 24);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 134);
+            this.pictureBox4.Size = new System.Drawing.Size(106, 109);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -672,11 +652,10 @@
             this.lbAnnouncements.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAnnouncements.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lbAnnouncements.FormattingEnabled = true;
-            this.lbAnnouncements.ItemHeight = 21;
-            this.lbAnnouncements.Location = new System.Drawing.Point(32, 215);
-            this.lbAnnouncements.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbAnnouncements.ItemHeight = 17;
+            this.lbAnnouncements.Location = new System.Drawing.Point(24, 175);
             this.lbAnnouncements.Name = "lbAnnouncements";
-            this.lbAnnouncements.Size = new System.Drawing.Size(463, 277);
+            this.lbAnnouncements.Size = new System.Drawing.Size(348, 225);
             this.lbAnnouncements.TabIndex = 0;
             this.lbAnnouncements.SelectedIndexChanged += new System.EventHandler(this.lbAnnouncements_SelectedIndexChanged);
             // 
@@ -689,10 +668,9 @@
             this.Complaints.Controls.Add(this.label8);
             this.Complaints.Controls.Add(this.label9);
             this.Complaints.Controls.Add(this.pictureBox5);
-            this.Complaints.Location = new System.Drawing.Point(4, 30);
-            this.Complaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Complaints.Location = new System.Drawing.Point(4, 26);
             this.Complaints.Name = "Complaints";
-            this.Complaints.Size = new System.Drawing.Size(761, 542);
+            this.Complaints.Size = new System.Drawing.Size(569, 438);
             this.Complaints.TabIndex = 4;
             this.Complaints.Text = "Complaints";
             // 
@@ -702,11 +680,10 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.textBox1.Location = new System.Drawing.Point(171, 228);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(128, 185);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(419, 90);
+            this.textBox1.Size = new System.Drawing.Size(314, 73);
             this.textBox1.TabIndex = 27;
             this.textBox1.Text = "Complaints are personal and get directly sent to the administrator.  Other tenant" +
     "s cannot access your complaints.";
@@ -717,10 +694,9 @@
             this.btnOldComplaints.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnOldComplaints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOldComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnOldComplaints.Location = new System.Drawing.Point(171, 342);
-            this.btnOldComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOldComplaints.Location = new System.Drawing.Point(128, 278);
             this.btnOldComplaints.Name = "btnOldComplaints";
-            this.btnOldComplaints.Size = new System.Drawing.Size(419, 43);
+            this.btnOldComplaints.Size = new System.Drawing.Size(314, 35);
             this.btnOldComplaints.TabIndex = 26;
             this.btnOldComplaints.Text = "Your previous complaints";
             this.btnOldComplaints.UseVisualStyleBackColor = false;
@@ -731,10 +707,9 @@
             this.btnCreateComplaint.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCreateComplaint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateComplaint.ForeColor = System.Drawing.Color.White;
-            this.btnCreateComplaint.Location = new System.Drawing.Point(171, 412);
-            this.btnCreateComplaint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateComplaint.Location = new System.Drawing.Point(128, 335);
             this.btnCreateComplaint.Name = "btnCreateComplaint";
-            this.btnCreateComplaint.Size = new System.Drawing.Size(419, 76);
+            this.btnCreateComplaint.Size = new System.Drawing.Size(314, 62);
             this.btnCreateComplaint.TabIndex = 25;
             this.btnCreateComplaint.Text = "New Complaint";
             this.btnCreateComplaint.UseVisualStyleBackColor = false;
@@ -745,10 +720,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Gold;
-            this.label8.Location = new System.Drawing.Point(207, 31);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(155, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(331, 60);
+            this.label8.Size = new System.Drawing.Size(263, 47);
             this.label8.TabIndex = 14;
             this.label8.Text = "Student House";
             // 
@@ -757,20 +731,18 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Blue;
-            this.label9.Location = new System.Drawing.Point(207, 110);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(155, 89);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(219, 50);
+            this.label9.Size = new System.Drawing.Size(172, 40);
             this.label9.TabIndex = 13;
             this.label9.Text = "Complaints";
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(33, 31);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(25, 25);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(141, 134);
+            this.pictureBox5.Size = new System.Drawing.Size(106, 109);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
@@ -784,14 +756,55 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lsbGroceriesPayments
+            // 
+            this.lsbGroceriesPayments.FormattingEnabled = true;
+            this.lsbGroceriesPayments.ItemHeight = 17;
+            this.lsbGroceriesPayments.Location = new System.Drawing.Point(3, 98);
+            this.lsbGroceriesPayments.Name = "lsbGroceriesPayments";
+            this.lsbGroceriesPayments.Size = new System.Drawing.Size(226, 157);
+            this.lsbGroceriesPayments.TabIndex = 13;
+            // 
+            // lsbGroceriesStudents
+            // 
+            this.lsbGroceriesStudents.FormattingEnabled = true;
+            this.lsbGroceriesStudents.ItemHeight = 17;
+            this.lsbGroceriesStudents.Location = new System.Drawing.Point(246, 98);
+            this.lsbGroceriesStudents.Name = "lsbGroceriesStudents";
+            this.lsbGroceriesStudents.Size = new System.Drawing.Size(170, 157);
+            this.lsbGroceriesStudents.TabIndex = 14;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label10.Location = new System.Drawing.Point(3, 65);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 30);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Payments:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label11.Location = new System.Drawing.Point(246, 65);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 30);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Students:";
+            // 
             // Form5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(764, 565);
+            this.ClientSize = new System.Drawing.Size(573, 459);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form5";
             this.Text = "Student House API";
             this.Load += new System.EventHandler(this.Form5_Load);
@@ -853,13 +866,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbSubstractAmount;
-        private System.Windows.Forms.Button btnSubstract;
-        private System.Windows.Forms.CheckedListBox clbGroceries;
+        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnSubmitGroceries;
         private System.Windows.Forms.TextBox tbPrice;
         private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Label lblAnn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox tbxPurchase;
         private System.Windows.Forms.Label lblDateChanged;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Timer timer1;
@@ -877,5 +889,9 @@
         private System.Windows.Forms.Button btnCreateComplaint;
         private System.Windows.Forms.Button btnComplaints;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox lsbGroceriesStudents;
+        private System.Windows.Forms.ListBox lsbGroceriesPayments;
     }
 }

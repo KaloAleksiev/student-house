@@ -519,5 +519,80 @@ namespace Project1
             }
 
         }
+        public async Task<dynamic> GetStudentsAmounts()
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    query GetStudentsAmounts {
+                      users {
+                        firstName
+                        amount
+                        id
+                      }
+                    }
+                "
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            return graphQLResponse.Data.users;
+        }
+        public async Task<dynamic> UpdateStudentAmount(int amount)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation UpdateStudentAmount($amount: Int) {
+                      update_users(where: {id: {_eq: 1}}, _inc: {amount: $amount}) {
+                        affected_rows
+                      }
+                    }
+                ",
+                Variables = new
+                {
+                    amount = amount
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            return graphQLResponse.Data.users;
+        }
+        public async Task<dynamic> GetPayments()
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                   query GetPayments {
+                      payments(order_by: {id: desc}, limit: 30) {
+                        message
+                      }
+                    }
+                "
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            return graphQLResponse.Data.payments;
+        }
+        public async Task<string> InsertPayment(string message)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation InsertPayment($message: String) {
+                      insert_payments(objects: {message: $message}) {
+                        affected_rows
+                      }
+                    }
+                ",
+                Variables = new
+                {
+                    message = message
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+
+            return "";
+        }
     }
 }

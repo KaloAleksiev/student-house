@@ -60,11 +60,6 @@ namespace Project1
             todayToInt = Convert.ToInt32(today.Substring(0, 2));
         }
 
-        private void btnSubmitGroceries_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblStudentHouse_Click(object sender, EventArgs e)
         {
 
@@ -90,6 +85,7 @@ namespace Project1
         }
         string readFromArduino()
         {
+            return "";
             if (serialPort1.BytesToRead > 0)                                    //if there's information to be read
             {
                 string readLine = serialPort1.ReadLine();
@@ -131,12 +127,12 @@ namespace Project1
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            serialPort1.Open();
+            //serialPort1.Open();
 
         }
         private void Form5_FormClosed(object sender, FormClosedEventArgs e)
         {
-            serialPort1.Close();
+            //serialPort1.Close();
         }
 
         private void btnCleaningSchedule_Click(object sender, EventArgs e)
@@ -214,6 +210,8 @@ namespace Project1
                     lbAnnouncements.Items.Add(anno.GetInfo());
                 }
             }
+
+            refreshGroceriesTab();
         }
 
         private void btnComplaints_Click(object sender, EventArgs e)
@@ -224,6 +222,86 @@ namespace Project1
         private void Announcements_Click(object sender, EventArgs e)
         {
 
+        }
+        private async void btnSubmitGroceries_Click(object sender, EventArgs e)
+        {
+            string purchase = tbxPurchase.Text;
+            string price = tbPrice.Text;
+
+            if (purchase == "" || price == "")
+            {
+                return;
+            }
+
+            tbxPurchase.Text = "";
+            tbPrice.Text = "";
+
+            await database.InsertPayment(currentStudent.GetFirstName() + " bought " + purchase + " for " + price + " eur.");
+            await database.UpdateStudentAmount(Convert.ToInt32(price));
+            refreshGroceriesTab();
+        }
+
+        private async void refreshGroceriesTab()
+        {
+            lsbGroceriesStudents.Items.Clear();
+            lsbGroceriesPayments.Items.Clear();
+
+            var students = await database.GetStudentsAmounts();
+            var payments = await database.GetPayments();
+
+            for (int i = 0; i < payments.Count; i++)
+            {
+                lsbGroceriesPayments.Items.Add(
+                    payments[i].message.Value
+                );
+            }
+
+            int maxAmountStudentIndex = -1;
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (maxAmountStudentIndex == -1)
+                {
+                    maxAmountStudentIndex = i;
+                    continue;
+                }
+
+                Console.WriteLine(students[maxAmountStudentIndex].amount.Value);
+
+                if (students[i].amount.Value > students[maxAmountStudentIndex].amount.Value)
+                {
+                    maxAmountStudentIndex = i;
+                }
+            }
+
+            for (int i = 0; i < students.Count; i++)
+            {
+                if (maxAmountStudentIndex == i)
+                {
+                    lsbGroceriesStudents.Items.Add(
+                        students[i].firstName.Value + "       0 eur."
+                    );
+                }
+                else
+                {
+                    lsbGroceriesStudents.Items.Add(
+                        students[i].firstName.Value + "      " + (students[i].amount.Value - students[maxAmountStudentIndex].amount.Value) + " eur."
+                    );
+                }
+            }
+        }
+
+        private async void btnPay_Click(object sender, EventArgs e)
+        {
+            string price = tbSubstractAmount.Text;
+            if (price == "")
+            {
+                return;
+            }
+
+            tbSubstractAmount.Text = "";
+            await database.InsertPayment(currentStudent.GetFirstName() + " deposited " + price + " eur.");
+            await database.UpdateStudentAmount(Convert.ToInt32(price));
+            refreshGroceriesTab();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
