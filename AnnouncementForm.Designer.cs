@@ -28,71 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnnouncementForm));
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.tbMessage = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnPostAnnouncement = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tbTitle
             // 
-            this.tbTitle.Location = new System.Drawing.Point(75, 34);
+            this.tbTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTitle.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.tbTitle.Location = new System.Drawing.Point(37, 144);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(234, 20);
+            this.tbTitle.Size = new System.Drawing.Size(311, 25);
             this.tbTitle.TabIndex = 0;
             // 
             // tbMessage
             // 
-            this.tbMessage.Location = new System.Drawing.Point(75, 83);
+            this.tbMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMessage.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.tbMessage.Location = new System.Drawing.Point(37, 201);
+            this.tbMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
-            this.tbMessage.Size = new System.Drawing.Size(234, 100);
+            this.tbMessage.Size = new System.Drawing.Size(311, 130);
             this.tbMessage.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(179, 18);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label1.Location = new System.Drawing.Point(174, 119);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(42, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Title";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(179, 67);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label2.Location = new System.Drawing.Point(176, 176);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Text";
             // 
             // btnPostAnnouncement
             // 
-            this.btnPostAnnouncement.Location = new System.Drawing.Point(75, 199);
+            this.btnPostAnnouncement.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnPostAnnouncement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPostAnnouncement.ForeColor = System.Drawing.Color.White;
+            this.btnPostAnnouncement.Location = new System.Drawing.Point(37, 348);
+            this.btnPostAnnouncement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPostAnnouncement.Name = "btnPostAnnouncement";
-            this.btnPostAnnouncement.Size = new System.Drawing.Size(234, 52);
+            this.btnPostAnnouncement.Size = new System.Drawing.Size(311, 42);
             this.btnPostAnnouncement.TabIndex = 4;
             this.btnPostAnnouncement.Text = "Post New Announcement";
-            this.btnPostAnnouncement.UseVisualStyleBackColor = true;
+            this.btnPostAnnouncement.UseVisualStyleBackColor = false;
             this.btnPostAnnouncement.Click += new System.EventHandler(this.btnPostAnnouncement_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Gold;
+            this.label8.Location = new System.Drawing.Point(104, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(263, 47);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Student House";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Blue;
+            this.label9.Location = new System.Drawing.Point(105, 59);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(277, 37);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "New Announcement";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(86, 87);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 39;
+            this.pictureBox5.TabStop = false;
             // 
             // AnnouncementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(394, 273);
+            this.ClientSize = new System.Drawing.Size(394, 413);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnPostAnnouncement);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbMessage);
             this.Controls.Add(this.tbTitle);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AnnouncementForm";
             this.Text = "New Announcement";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +165,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPostAnnouncement;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

@@ -31,7 +31,7 @@ namespace Project1
             //the cleaning schedule
             getTodayDate(); //gets today date
             checkIfIsCurrentStudentTurnToClean();
-            lblAnn.Text += currentStudent.GetFirstName() + " " + currentStudent.GetLastName() + ":";
+            lblAnn.Text += currentStudent.GetFirstName() + ":";
         }
 
         private async void checkIfIsCurrentStudentTurnToClean()
@@ -81,7 +81,7 @@ namespace Project1
             id++;
             string firstName = await database.GetFirstName(id);
             string roomNr = await database.GetRoomNumber(id);
-            lblDateChanged.Text = "On " + date + " " + firstName + " (Room number: " + roomNr + ") should do the cleaning";
+            lblDateChanged.Text = "On " + date + " " + firstName + " (Room number " + roomNr + ") will be doing the cleaning.";
         }
         string readFromArduino()
         {
@@ -106,16 +106,16 @@ namespace Project1
                 {
                     makeToolsInvisible();
                     lblTrashOut.Text = "Thank you!";
-                    lblNextClean.Text = "Wash the dishes";
+                    lblNextClean.Text = "Wash the dishes.";
                 }
                 else
                 {
-                    MessageBox.Show("No, you did not take the trash out");
+                    MessageBox.Show("According to the system, you have not taken the trash out.");
                 }
             }
             if (rbtnNo.Checked)
             {
-                MessageBox.Show("Then you should");
+                MessageBox.Show("Please take the trash out.");
             }
         }
 

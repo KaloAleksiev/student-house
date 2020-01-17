@@ -24,13 +24,12 @@ namespace Project1
             lblId.Text = complaint.GetAuthorId().ToString();
             tbComplaint.Text = complaint.GetMessage();
             lblStatus.Text = "Open";
-            lblAnnouncements.Text = "Complaint #" + complaint.GetComplaintId();
         }
 
         private async void btnSubmitAnswer_Click(object sender, EventArgs e)
         {
             string answer=tbAnswer.Text;
-            if(answer!="")
+            if (answer != "")
             {
                 database.InsertNewAnswer(answer, Convert.ToInt32(complaint.GetComplaintId()));
                 database.CloseComplaint(Convert.ToInt32(complaint.GetComplaintId()));
