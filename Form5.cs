@@ -85,7 +85,6 @@ namespace Project1
         }
         string readFromArduino()
         {
-            return "";
             if (serialPort1.BytesToRead > 0)                                    //if there's information to be read
             {
                 string readLine = serialPort1.ReadLine();
@@ -127,12 +126,12 @@ namespace Project1
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            //serialPort1.Open();
+            serialPort1.Open();
 
         }
         private void Form5_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //serialPort1.Close();
+            serialPort1.Close();
         }
 
         private void btnCleaningSchedule_Click(object sender, EventArgs e)
