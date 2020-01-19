@@ -60,7 +60,7 @@ namespace Project1
             return currentStudent;
         }
 
-        public async Task<string>GetFirstName(int id)
+        public async Task<string> GetFirstName(int id)
         {
 
             var heroRequest = new GraphQLRequest
@@ -91,7 +91,7 @@ namespace Project1
                 return "-1";
             }
 
-            
+
             return users.First.firstName;
         }
         public async Task<string> GetRoomNumber(int id)
@@ -537,24 +537,69 @@ namespace Project1
             var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
             return graphQLResponse.Data.users;
         }
-        public async Task<dynamic> UpdateStudentAmount(int amount)
+        public async Task<dynamic> UpdateOtherStudentsAmounts(int id, int amount)
         {
             var heroRequest = new GraphQLRequest
             {
                 Query = @"
-                    mutation UpdateStudentAmount($amount: Int) {
-                      update_users(where: {id: {_eq: 1}}, _inc: {amount: $amount}) {
+                    mutation UpdateOtherStudentsAmounts($id: Int, $amount: Int) {
+                      update_users(where: {_not: {id: {_eq: $id}}}, _inc: {amount: $amount}) {
                         affected_rows
                       }
                     }
                 ",
                 Variables = new
                 {
+                    id = id,
                     amount = amount
                 }
             };
 
             var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            return graphQLResponse.Data.users;
+        }
+
+        public async Task<dynamic> UpdateStudentAmount(int id, int amount)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation UpdateStudentAmount($id: Int, $amount: Int) {
+                      update_users(where: {id: {_eq: $id}}, _inc: {amount: $amount}) {
+                        affected_rows
+                      }
+                    }
+                ",
+                Variables = new
+                {
+                    id = id,
+                    amount = amount
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            return graphQLResponse.Data.users;
+        }
+        public async Task<dynamic> SetStudentAmount(int id, int amount)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                    mutation SetStudentAmount($id: Int, $amount: Int) {
+                      update_users(where: {id: {_eq: $id}}, _set: {amount: $amount}) {
+                        affected_rows
+                      }
+                    }
+                ",
+                Variables = new
+                {
+                    id = id,
+                    amount = amount
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+            Console.WriteLine(graphQLResponse.Data);
             return graphQLResponse.Data.users;
         }
         public async Task<dynamic> GetPayments()
@@ -594,5 +639,31 @@ namespace Project1
 
             return "";
         }
+        public async Task<int> GetStudentAmount(int id)
+        {
+            var heroRequest = new GraphQLRequest
+            {
+                Query = @"
+                   query MyQuery($id: Int)
+                    {
+                        users(where: { id: { _eq: $id} })
+                        {
+                            amount
+                        }
+                    }
+                ",
+                Variables = new
+                {
+                    id = id
+                }
+            };
+
+            var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
+
+            return Convert.ToInt32(graphQLResponse.Data.users.First.amount.Value);
+        }
+
+
+        
     }
 }

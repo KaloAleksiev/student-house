@@ -235,8 +235,26 @@ namespace Project1
             tbxPurchase.Text = "";
             tbPrice.Text = "";
 
+            int priceint = Convert.ToInt32(Convert.ToDouble(price) * 100);
+
+            int amount = await database.GetStudentAmount(currentStudent.GetId());
+            int newAmount = priceint + amount;
+            if (newAmount > 0)
+            {
+                int stAmount = (await database.GetStudentsAmounts()).Count;
+
+                await database.SetStudentAmount(currentStudent.GetId(), 0);
+                await database.UpdateOtherStudentsAmounts(
+                    currentStudent.GetId(),
+                    -newAmount / stAmount
+                );
+            }
+            else
+            {
+                await database.SetStudentAmount(currentStudent.GetId(), newAmount);
+            }
+
             await database.InsertPayment(currentStudent.GetFirstName() + " bought " + purchase + " for " + price + " eur.");
-            await database.UpdateStudentAmount(Convert.ToInt32(price));
             refreshGroceriesTab();
         }
 
@@ -255,37 +273,11 @@ namespace Project1
                 );
             }
 
-            int maxAmountStudentIndex = -1;
             for (int i = 0; i < students.Count; i++)
             {
-                if (maxAmountStudentIndex == -1)
-                {
-                    maxAmountStudentIndex = i;
-                    continue;
-                }
-
-                Console.WriteLine(students[maxAmountStudentIndex].amount.Value);
-
-                if (students[i].amount.Value > students[maxAmountStudentIndex].amount.Value)
-                {
-                    maxAmountStudentIndex = i;
-                }
-            }
-
-            for (int i = 0; i < students.Count; i++)
-            {
-                if (maxAmountStudentIndex == i)
-                {
-                    lsbGroceriesStudents.Items.Add(
-                        students[i].firstName.Value + "       0 eur."
-                    );
-                }
-                else
-                {
-                    lsbGroceriesStudents.Items.Add(
-                        students[i].firstName.Value + "      " + (students[i].amount.Value - students[maxAmountStudentIndex].amount.Value) + " eur."
-                    );
-                }
+                lsbGroceriesStudents.Items.Add(
+                    students[i].firstName.Value + "      " + ((students[i].amount.Value) / 100.00) + " eur."
+                );
             }
         }
 
@@ -299,7 +291,7 @@ namespace Project1
 
             tbSubstractAmount.Text = "";
             await database.InsertPayment(currentStudent.GetFirstName() + " deposited " + price + " eur.");
-            await database.UpdateStudentAmount(Convert.ToInt32(price));
+            await database.UpdateStudentAmount(currentStudent.GetId(), Convert.ToInt32(Convert.ToDouble(price) * 100));
             refreshGroceriesTab();
         }
 
