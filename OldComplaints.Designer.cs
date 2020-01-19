@@ -44,7 +44,7 @@
             this.lbOldComplaints.FormattingEnabled = true;
             this.lbOldComplaints.ItemHeight = 17;
             this.lbOldComplaints.Location = new System.Drawing.Point(52, 146);
-            this.lbOldComplaints.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOldComplaints.Margin = new System.Windows.Forms.Padding(2);
             this.lbOldComplaints.Name = "lbOldComplaints";
             this.lbOldComplaints.Size = new System.Drawing.Size(289, 157);
             this.lbOldComplaints.TabIndex = 35;
@@ -92,9 +92,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblAnnouncements);
             this.Controls.Add(this.pictureBox4);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OldComplaints";
-            this.Text = "OldComplaints";
+            this.Text = "Old Complaints";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

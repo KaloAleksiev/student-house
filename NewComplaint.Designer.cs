@@ -33,109 +33,122 @@
             this.lblComplaintText = new System.Windows.Forms.Label();
             this.tbComplaintTitle = new System.Windows.Forms.TextBox();
             this.btnSendComplaint = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblAnnouncements = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tbComplaintText
             // 
-            this.tbComplaintText.Location = new System.Drawing.Point(60, 315);
-            this.tbComplaintText.Margin = new System.Windows.Forms.Padding(4);
+            this.tbComplaintText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbComplaintText.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbComplaintText.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.tbComplaintText.Location = new System.Drawing.Point(36, 196);
             this.tbComplaintText.Multiline = true;
             this.tbComplaintText.Name = "tbComplaintText";
-            this.tbComplaintText.Size = new System.Drawing.Size(311, 122);
+            this.tbComplaintText.Size = new System.Drawing.Size(311, 130);
             this.tbComplaintText.TabIndex = 34;
             // 
             // lblComplaintText
             // 
             this.lblComplaintText.AutoSize = true;
-            this.lblComplaintText.Location = new System.Drawing.Point(57, 263);
+            this.lblComplaintText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComplaintText.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.lblComplaintText.Location = new System.Drawing.Point(177, 172);
+            this.lblComplaintText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblComplaintText.Name = "lblComplaintText";
-            this.lblComplaintText.Size = new System.Drawing.Size(74, 17);
+            this.lblComplaintText.Size = new System.Drawing.Size(40, 21);
             this.lblComplaintText.TabIndex = 33;
-            this.lblComplaintText.Text = "Complaint:";
+            this.lblComplaintText.Text = "Text";
             // 
             // tbComplaintTitle
             // 
-            this.tbComplaintTitle.Location = new System.Drawing.Point(60, 212);
+            this.tbComplaintTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbComplaintTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbComplaintTitle.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.tbComplaintTitle.Location = new System.Drawing.Point(36, 140);
+            this.tbComplaintTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbComplaintTitle.Name = "tbComplaintTitle";
-            this.tbComplaintTitle.Size = new System.Drawing.Size(100, 22);
+            this.tbComplaintTitle.Size = new System.Drawing.Size(311, 25);
             this.tbComplaintTitle.TabIndex = 32;
             // 
             // btnSendComplaint
             // 
-            this.btnSendComplaint.Location = new System.Drawing.Point(500, 379);
-            this.btnSendComplaint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSendComplaint.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSendComplaint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendComplaint.ForeColor = System.Drawing.Color.White;
+            this.btnSendComplaint.Location = new System.Drawing.Point(36, 332);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(159, 65);
+            this.btnSendComplaint.Size = new System.Drawing.Size(311, 42);
             this.btnSendComplaint.TabIndex = 31;
             this.btnSendComplaint.Text = "Send complaint to administrator";
-            this.btnSendComplaint.UseVisualStyleBackColor = true;
+            this.btnSendComplaint.UseVisualStyleBackColor = false;
             this.btnSendComplaint.Click += new System.EventHandler(this.btnSendComplaint_Click_1);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gold;
-            this.label7.Location = new System.Drawing.Point(237, 7);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(331, 60);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Student House";
-            // 
-            // lblAnnouncements
-            // 
-            this.lblAnnouncements.AutoSize = true;
-            this.lblAnnouncements.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnnouncements.ForeColor = System.Drawing.Color.Blue;
-            this.lblAnnouncements.Location = new System.Drawing.Point(237, 85);
-            this.lblAnnouncements.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAnnouncements.Name = "lblAnnouncements";
-            this.lblAnnouncements.Size = new System.Drawing.Size(506, 54);
-            this.lblAnnouncements.TabIndex = 29;
-            this.lblAnnouncements.Text = "Creating a new complaint";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(60, 7);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(141, 134);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 181);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label1.Location = new System.Drawing.Point(177, 117);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 17);
+            this.label1.Size = new System.Drawing.Size(42, 21);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Title:";
+            this.label1.Text = "Title";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Gold;
+            this.label8.Location = new System.Drawing.Point(104, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(263, 47);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Student House";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Blue;
+            this.label9.Location = new System.Drawing.Point(105, 59);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(216, 37);
+            this.label9.TabIndex = 43;
+            this.label9.Text = "New Complaint";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(86, 87);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 42;
+            this.pictureBox5.TabStop = false;
             // 
             // NewComplaint
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.ClientSize = new System.Drawing.Size(392, 395);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbComplaintText);
             this.Controls.Add(this.lblComplaintText);
             this.Controls.Add(this.tbComplaintTitle);
             this.Controls.Add(this.btnSendComplaint);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.lblAnnouncements);
-            this.Controls.Add(this.pictureBox4);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "NewComplaint";
-            this.Text = "NewComplaint";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.Text = "New Complaint";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,9 +160,9 @@
         private System.Windows.Forms.Label lblComplaintText;
         private System.Windows.Forms.TextBox tbComplaintTitle;
         private System.Windows.Forms.Button btnSendComplaint;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblAnnouncements;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }

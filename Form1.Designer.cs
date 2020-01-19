@@ -101,9 +101,9 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(177, 123);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(64, 25);
+            this.lblName.Size = new System.Drawing.Size(59, 25);
             this.lblName.TabIndex = 4;
-            this.lblName.Text = "Name";
+            this.lblName.Text = "Email";
             // 
             // pictureBox1
             // 
