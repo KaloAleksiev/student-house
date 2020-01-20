@@ -31,8 +31,8 @@ namespace Project1
             string answer=tbAnswer.Text;
             if (answer != "")
             {
-                database.InsertNewAnswer(answer, Convert.ToInt32(complaint.GetComplaintId()));
-                database.CloseComplaint(Convert.ToInt32(complaint.GetComplaintId()));
+                await database.InsertNewAnswer(answer, Convert.ToInt32(complaint.GetComplaintId()));
+                await database.CloseComplaint(Convert.ToInt32(complaint.GetComplaintId()));
                 MessageBox.Show("Complaint #" + complaint.GetComplaintId() + " closed");
                 this.Close();
             }

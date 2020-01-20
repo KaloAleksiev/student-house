@@ -90,7 +90,7 @@ namespace Project1
 
         public string GetInfo()
         {
-            return this.time + " " + this.author + " " + this.title;
+            return this.time + "\t" + this.author + "\t" + this.title;
         }
 
         public string GetDate()

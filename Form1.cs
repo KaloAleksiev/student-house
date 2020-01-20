@@ -17,8 +17,6 @@ namespace Project1
         StudentHouse studentHouse = new StudentHouse();
         Student currentStudent = null;
         Database database;
-        int count = 0;
-        int currentStudentID = -1;
         public Form1()
         {
             InitializeComponent();
@@ -59,15 +57,90 @@ namespace Project1
                     MessageBox.Show("The credentials did not match");
                 }
             }
-            
-            
-
         }
 
-        
+        private async void btnLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string username = tbName.Text;
+                string password = tbPassword.Text;
+                if (password == "admin" && username == "admin")
+                {
+                    Admin admin = new Admin();
+                    admin.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    currentStudent = await database.FindStudent(username, password, currentStudent);
+                    if (currentStudent != null)
+                    {
+                        openNewForm();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The credentials did not match");
+                    }
+                }
+            }
+        }
 
-       
+        private async void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string username = tbName.Text;
+                string password = tbPassword.Text;
+                if (password == "admin" && username == "admin")
+                {
+                    Admin admin = new Admin();
+                    admin.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    currentStudent = await database.FindStudent(username, password, currentStudent);
+                    if (currentStudent != null)
+                    {
+                        openNewForm();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The credentials did not match");
+                    }
+                }
+            }
+        }
 
-           
+        private async void tbName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string username = tbName.Text;
+                string password = tbPassword.Text;
+                if (password == "admin" && username == "admin")
+                {
+                    Admin admin = new Admin();
+                    admin.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    currentStudent = await database.FindStudent(username, password, currentStudent);
+                    if (currentStudent != null)
+                    {
+                        openNewForm();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("The credentials did not match");
+                    }
+                }
+            }
+        }
     }
 }

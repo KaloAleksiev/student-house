@@ -31,7 +31,6 @@ namespace Project1
                 lblStatus.Text = "Closed";
                 adminAnswer();
             }
-            lblAnnouncements.Text = "Complaint #" + complaint.GetComplaintId();
         }
 
         private async void adminAnswer()

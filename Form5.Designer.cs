@@ -61,6 +61,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lsbGroceriesStudents = new System.Windows.Forms.ListBox();
@@ -88,7 +89,11 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label12 = new System.Windows.Forms.Label();
+            this.Rules = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl.SuspendLayout();
             this.Home.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,6 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.Complaints.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.Rules.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -112,6 +119,7 @@
             this.tabControl.Controls.Add(this.Groceries);
             this.tabControl.Controls.Add(this.Announcements);
             this.tabControl.Controls.Add(this.Complaints);
+            this.tabControl.Controls.Add(this.Rules);
             this.tabControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(-3, -4);
@@ -253,7 +261,7 @@
             this.lblStudentHouse.AutoSize = true;
             this.lblStudentHouse.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudentHouse.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblStudentHouse.Location = new System.Drawing.Point(106, 185);
+            this.lblStudentHouse.Location = new System.Drawing.Point(58, 170);
             this.lblStudentHouse.Name = "lblStudentHouse";
             this.lblStudentHouse.Size = new System.Drawing.Size(0, 45);
             this.lblStudentHouse.TabIndex = 6;
@@ -356,7 +364,7 @@
             // 
             this.lblTrashOut.AutoSize = true;
             this.lblTrashOut.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrashOut.ForeColor = System.Drawing.Color.Blue;
+            this.lblTrashOut.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lblTrashOut.Location = new System.Drawing.Point(262, 104);
             this.lblTrashOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrashOut.Name = "lblTrashOut";
@@ -368,7 +376,7 @@
             // 
             this.lblNextClean.AutoSize = true;
             this.lblNextClean.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextClean.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.lblNextClean.ForeColor = System.Drawing.Color.Gold;
             this.lblNextClean.Location = new System.Drawing.Point(260, 53);
             this.lblNextClean.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNextClean.Name = "lblNextClean";
@@ -380,7 +388,7 @@
             // 
             this.lblAnn.AutoSize = true;
             this.lblAnn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnn.ForeColor = System.Drawing.Color.Blue;
+            this.lblAnn.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lblAnn.Location = new System.Drawing.Point(260, 24);
             this.lblAnn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnn.Name = "lblAnn";
@@ -496,17 +504,29 @@
             this.panel3.Size = new System.Drawing.Size(537, 287);
             this.panel3.TabIndex = 3;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.label12.Location = new System.Drawing.Point(366, 204);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(94, 30);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Amount";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label11.Location = new System.Drawing.Point(212, 85);
+            this.label11.Location = new System.Drawing.Point(198, 85);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 30);
+            this.label11.Size = new System.Drawing.Size(103, 30);
             this.label11.TabIndex = 16;
-            this.label11.Text = "Students:";
+            this.label11.Text = "Balances:";
             // 
             // label10
             // 
@@ -522,15 +542,19 @@
             // 
             // lsbGroceriesStudents
             // 
+            this.lsbGroceriesStudents.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.lsbGroceriesStudents.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lsbGroceriesStudents.FormattingEnabled = true;
             this.lsbGroceriesStudents.ItemHeight = 17;
-            this.lsbGroceriesStudents.Location = new System.Drawing.Point(217, 118);
+            this.lsbGroceriesStudents.Location = new System.Drawing.Point(203, 118);
             this.lsbGroceriesStudents.Name = "lsbGroceriesStudents";
-            this.lsbGroceriesStudents.Size = new System.Drawing.Size(186, 157);
+            this.lsbGroceriesStudents.Size = new System.Drawing.Size(112, 157);
             this.lsbGroceriesStudents.TabIndex = 14;
             // 
             // lsbGroceriesPayments
             // 
+            this.lsbGroceriesPayments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.lsbGroceriesPayments.ForeColor = System.Drawing.Color.DarkOrchid;
             this.lsbGroceriesPayments.FormattingEnabled = true;
             this.lsbGroceriesPayments.ItemHeight = 17;
             this.lsbGroceriesPayments.Location = new System.Drawing.Point(8, 118);
@@ -540,6 +564,8 @@
             // 
             // tbxPurchase
             // 
+            this.tbxPurchase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbxPurchase.ForeColor = System.Drawing.Color.White;
             this.tbxPurchase.Location = new System.Drawing.Point(8, 47);
             this.tbxPurchase.Name = "tbxPurchase";
             this.tbxPurchase.Size = new System.Drawing.Size(186, 25);
@@ -552,7 +578,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label3.Location = new System.Drawing.Point(212, 14);
+            this.label3.Location = new System.Drawing.Point(198, 14);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 30);
@@ -574,10 +600,12 @@
             // 
             // tbSubstractAmount
             // 
-            this.tbSubstractAmount.Location = new System.Drawing.Point(424, 209);
+            this.tbSubstractAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbSubstractAmount.ForeColor = System.Drawing.Color.White;
+            this.tbSubstractAmount.Location = new System.Drawing.Point(464, 207);
             this.tbSubstractAmount.Margin = new System.Windows.Forms.Padding(2);
             this.tbSubstractAmount.Name = "tbSubstractAmount";
-            this.tbSubstractAmount.Size = new System.Drawing.Size(88, 25);
+            this.tbSubstractAmount.Size = new System.Drawing.Size(45, 25);
             this.tbSubstractAmount.TabIndex = 8;
             // 
             // btnPay
@@ -585,12 +613,12 @@
             this.btnPay.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnPay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(423, 238);
+            this.btnPay.Location = new System.Drawing.Point(320, 236);
             this.btnPay.Margin = new System.Windows.Forms.Padding(2);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(89, 37);
+            this.btnPay.Size = new System.Drawing.Size(189, 39);
             this.btnPay.TabIndex = 7;
-            this.btnPay.Text = "Pay";
+            this.btnPay.Text = "Pay selected member";
             this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
@@ -599,10 +627,10 @@
             this.btnSubmitGroceries.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnSubmitGroceries.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitGroceries.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitGroceries.Location = new System.Drawing.Point(352, 47);
+            this.btnSubmitGroceries.Location = new System.Drawing.Point(320, 47);
             this.btnSubmitGroceries.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitGroceries.Name = "btnSubmitGroceries";
-            this.btnSubmitGroceries.Size = new System.Drawing.Size(160, 39);
+            this.btnSubmitGroceries.Size = new System.Drawing.Size(189, 39);
             this.btnSubmitGroceries.TabIndex = 4;
             this.btnSubmitGroceries.Text = "Submit Purchase";
             this.btnSubmitGroceries.UseVisualStyleBackColor = false;
@@ -610,7 +638,9 @@
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(217, 47);
+            this.tbPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbPrice.ForeColor = System.Drawing.Color.White;
+            this.tbPrice.Location = new System.Drawing.Point(203, 47);
             this.tbPrice.Margin = new System.Windows.Forms.Padding(2);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(88, 25);
@@ -637,9 +667,9 @@
             this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(388, 175);
+            this.btnRefresh.Location = new System.Drawing.Point(408, 175);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(157, 44);
+            this.btnRefresh.Size = new System.Drawing.Size(137, 44);
             this.btnRefresh.TabIndex = 19;
             this.btnRefresh.Text = "Refresh List";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -650,9 +680,9 @@
             this.btnAnnouncement.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnAnnouncement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnouncement.ForeColor = System.Drawing.Color.White;
-            this.btnAnnouncement.Location = new System.Drawing.Point(388, 335);
+            this.btnAnnouncement.Location = new System.Drawing.Point(408, 335);
             this.btnAnnouncement.Name = "btnAnnouncement";
-            this.btnAnnouncement.Size = new System.Drawing.Size(157, 65);
+            this.btnAnnouncement.Size = new System.Drawing.Size(137, 65);
             this.btnAnnouncement.TabIndex = 18;
             this.btnAnnouncement.Text = "New Announcement";
             this.btnAnnouncement.UseVisualStyleBackColor = false;
@@ -699,7 +729,7 @@
             this.lbAnnouncements.ItemHeight = 17;
             this.lbAnnouncements.Location = new System.Drawing.Point(24, 175);
             this.lbAnnouncements.Name = "lbAnnouncements";
-            this.lbAnnouncements.Size = new System.Drawing.Size(348, 225);
+            this.lbAnnouncements.Size = new System.Drawing.Size(378, 225);
             this.lbAnnouncements.TabIndex = 0;
             this.lbAnnouncements.SelectedIndexChanged += new System.EventHandler(this.lbAnnouncements_SelectedIndexChanged);
             // 
@@ -724,13 +754,14 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.textBox1.Location = new System.Drawing.Point(128, 185);
+            this.textBox1.Location = new System.Drawing.Point(115, 179);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 73);
+            this.textBox1.Size = new System.Drawing.Size(339, 90);
             this.textBox1.TabIndex = 27;
             this.textBox1.Text = "Complaints are personal and get directly sent to the administrator.  Other tenant" +
-    "s cannot access your complaints.";
+    "s cannot access your complaints. The administrator will review and answer your m" +
+    "essage.";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnOldComplaints
@@ -738,9 +769,9 @@
             this.btnOldComplaints.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnOldComplaints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOldComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnOldComplaints.Location = new System.Drawing.Point(128, 278);
+            this.btnOldComplaints.Location = new System.Drawing.Point(115, 284);
             this.btnOldComplaints.Name = "btnOldComplaints";
-            this.btnOldComplaints.Size = new System.Drawing.Size(314, 35);
+            this.btnOldComplaints.Size = new System.Drawing.Size(339, 35);
             this.btnOldComplaints.TabIndex = 26;
             this.btnOldComplaints.Text = "Your previous complaints";
             this.btnOldComplaints.UseVisualStyleBackColor = false;
@@ -751,9 +782,9 @@
             this.btnCreateComplaint.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnCreateComplaint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateComplaint.ForeColor = System.Drawing.Color.White;
-            this.btnCreateComplaint.Location = new System.Drawing.Point(128, 335);
+            this.btnCreateComplaint.Location = new System.Drawing.Point(115, 338);
             this.btnCreateComplaint.Name = "btnCreateComplaint";
-            this.btnCreateComplaint.Size = new System.Drawing.Size(314, 62);
+            this.btnCreateComplaint.Size = new System.Drawing.Size(339, 62);
             this.btnCreateComplaint.TabIndex = 25;
             this.btnCreateComplaint.Text = "New Complaint";
             this.btnCreateComplaint.UseVisualStyleBackColor = false;
@@ -800,24 +831,67 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label12
+            // Rules
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label12.Location = new System.Drawing.Point(419, 177);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 30);
-            this.label12.TabIndex = 17;
-            this.label12.Text = "Amount";
+            this.Rules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.Rules.Controls.Add(this.richTextBox1);
+            this.Rules.Controls.Add(this.label13);
+            this.Rules.Controls.Add(this.label14);
+            this.Rules.Controls.Add(this.pictureBox6);
+            this.Rules.Location = new System.Drawing.Point(4, 26);
+            this.Rules.Name = "Rules";
+            this.Rules.Size = new System.Drawing.Size(569, 438);
+            this.Rules.TabIndex = 5;
+            this.Rules.Text = "Rules";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Gold;
+            this.label13.Location = new System.Drawing.Point(155, 23);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(263, 47);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Student House";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Blue;
+            this.label14.Location = new System.Drawing.Point(155, 87);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(186, 40);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "House Rules";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(25, 23);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(106, 109);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.richTextBox1.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.richTextBox1.Location = new System.Drawing.Point(25, 138);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(522, 282);
+            this.richTextBox1.TabIndex = 18;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(573, 459);
+            this.ClientSize = new System.Drawing.Size(573, 464);
             this.Controls.Add(this.tabControl);
             this.Name = "Form5";
             this.Text = "Student House API";
@@ -843,6 +917,9 @@
             this.Complaints.ResumeLayout(false);
             this.Complaints.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.Rules.ResumeLayout(false);
+            this.Rules.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -908,5 +985,10 @@
         private System.Windows.Forms.ListBox lsbGroceriesStudents;
         private System.Windows.Forms.ListBox lsbGroceriesPayments;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TabPage Rules;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

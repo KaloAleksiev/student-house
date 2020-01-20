@@ -20,7 +20,7 @@ namespace Project1
             this.announcement = announcement;
         }
 
-        private void btnPostAnnouncement_Click(object sender, EventArgs e)
+        public void btnPostAnnouncement_Click(object sender, EventArgs e)
         {
             if (tbTitle.Text != "" && tbMessage.Text != "")
             {

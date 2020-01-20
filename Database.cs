@@ -124,7 +124,7 @@ namespace Project1
                 return "-1";
             }
 
-            
+
             return users.First.roomId.Value;
         }
 
@@ -179,7 +179,7 @@ namespace Project1
                 }
             };
 
-            
+
             var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
             var announcements = graphQLResponse.Data.announcements;
 
@@ -224,7 +224,7 @@ namespace Project1
                 }
                 return announcementList;
             }
-            
+
         }
 
         public async Task<int> InsertNewComplaint(string time, string author, string title, string message, int id, bool isOpen)
@@ -297,7 +297,7 @@ namespace Project1
                 Announcement complaint;
                 for (int i = 0; i < complaints.Count; i++)
                 {
-                   
+
                     complaint = new Announcement(complaints[i].date.Value, complaints[i].authorName.Value, complaints[i].title.Value, (int)complaints[i].complaintId.Value, complaints[i].complaintText.Value, complaints[i].isOpen.Value);
                     complaintList.AddAnnouncement(complaint);
                 }
@@ -321,11 +321,11 @@ namespace Project1
                     }",
                 Variables = new
                 {
-                    firstName=firstName,
-                    lastName=lastName,
-                    email=email,
-                    password=password,
-                    roomId=roomId
+                    firstName = firstName,
+                    lastName = lastName,
+                    email = email,
+                    password = password,
+                    roomId = roomId
                 }
             };
 
@@ -354,7 +354,7 @@ namespace Project1
                         title
                       }
                     }",
-    
+
             };
 
             var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
@@ -396,8 +396,8 @@ namespace Project1
                     }",
                 Variables = new
                 {
-                    answer=answer,
-                    complaintId=complaintId
+                    answer = answer,
+                    complaintId = complaintId
                 }
             };
 
@@ -471,7 +471,7 @@ namespace Project1
             }
             else
             {
-                
+
                 return complaintAnswer.First.answer.Value;
             }
 
@@ -542,11 +542,15 @@ namespace Project1
             var heroRequest = new GraphQLRequest
             {
                 Query = @"
-                    mutation UpdateOtherStudentsAmounts($id: Int, $amount: Int) {
-                      update_users(where: {_not: {id: {_eq: $id}}}, _inc: {amount: $amount}) {
-                        affected_rows
-                      }
+                mutation MyMutation2($id: Int, $amount: Int) {
+                  __typename
+                  update_users(where: {id: {_neq: $id}}, _inc: {amount: $amount}) {
+                    returning {
+                      id
                     }
+                  }
+                }
+
                 ",
                 Variables = new
                 {
@@ -639,7 +643,7 @@ namespace Project1
 
             return "";
         }
-        public async Task<int> GetStudentAmount(int id)
+        public async Task<double> GetStudentAmount(int id)
         {
             var heroRequest = new GraphQLRequest
             {
@@ -660,10 +664,10 @@ namespace Project1
 
             var graphQLResponse = await graphQLClient.PostAsync(heroRequest);
 
-            return Convert.ToInt32(graphQLResponse.Data.users.First.amount.Value);
+            return Convert.ToDouble(graphQLResponse.Data.users.First.amount.Value);
         }
 
 
-        
+
     }
 }

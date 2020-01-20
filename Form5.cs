@@ -27,7 +27,7 @@ namespace Project1
             lblDateTime.Text = DateTime.Now.ToShortDateString();
             database = new Database();
             this.currentStudent = currentStudent;
-            lblStudentHouse.Text = "Hello, " + currentStudent.GetFirstName() + " " + currentStudent.GetLastName() + "!";
+            lblStudentHouse.Text = "Welcome, " + currentStudent.GetFirstName() + " " + currentStudent.GetLastName() + "!";
             //the cleaning schedule
             getTodayDate(); //gets today date
             checkIfIsCurrentStudentTurnToClean();
@@ -81,7 +81,7 @@ namespace Project1
             id++;
             string firstName = await database.GetFirstName(id);
             string roomNr = await database.GetRoomNumber(id);
-            lblDateChanged.Text = "On " + date + " " + firstName + " (Room number " + roomNr + ") will be doing the cleaning.";
+            lblDateChanged.Text = "On " + date + ", " + firstName + " (Room number " + roomNr + ") will be doing the cleaning.";
         }
         string readFromArduino()
         {
@@ -226,35 +226,43 @@ namespace Project1
         {
             string purchase = tbxPurchase.Text;
             string price = tbPrice.Text;
+            int intPrice = Convert.ToInt32(Convert.ToDouble(price) * 100);
 
             if (purchase == "" || price == "")
             {
+                MessageBox.Show("Please insert a valud purchase/price.");
                 return;
             }
 
             tbxPurchase.Text = "";
             tbPrice.Text = "";
 
-            int priceint = Convert.ToInt32(Convert.ToDouble(price) * 100);
+            //int priceint = Convert.ToInt32(Convert.ToDouble(price) * 100);
 
-            int amount = await database.GetStudentAmount(currentStudent.GetId());
-            int newAmount = priceint + amount;
-            if (newAmount > 0)
-            {
-                int stAmount = (await database.GetStudentsAmounts()).Count;
+            double amount = await database.GetStudentAmount(currentStudent.GetId());
+            //int newAmount = priceint + amount;
+            //if (newAmount > 0)
+            //{
+            //    int stAmount = (await database.GetStudentsAmounts()).Count;
 
-                await database.SetStudentAmount(currentStudent.GetId(), 0);
-                await database.UpdateOtherStudentsAmounts(
-                    currentStudent.GetId(),
-                    -newAmount / stAmount
-                );
-            }
-            else
-            {
-                await database.SetStudentAmount(currentStudent.GetId(), newAmount);
-            }
+            //    await database.SetStudentAmount(currentStudent.GetId(), 0);
+            //    await database.UpdateOtherStudentsAmounts(
+            //        currentStudent.GetId(),
+            //        -newAmount / stAmount
+            //    );
+            //}
+            //else
+            //{
+            //    await database.SetStudentAmount(currentStudent.GetId(), newAmount);
+            //}
+            int nrOfStudents = await database.GetTotalStudents();
+            int change = intPrice / nrOfStudents;
+            int buyerChange = change * (nrOfStudents - 1);
+            await database.UpdateOtherStudentsAmounts(currentStudent.GetId(), -change);
+            await database.UpdateStudentAmount(currentStudent.GetId(), buyerChange);
 
-            await database.InsertPayment(currentStudent.GetFirstName() + " bought " + purchase + " for " + price + " eur.");
+
+            await database.InsertPayment(currentStudent.GetFirstName() + " - " + purchase + " - " + price + "€");
             refreshGroceriesTab();
         }
 
@@ -276,22 +284,46 @@ namespace Project1
             for (int i = 0; i < students.Count; i++)
             {
                 lsbGroceriesStudents.Items.Add(
-                    students[i].firstName.Value + "      " + ((students[i].amount.Value) / 100.00) + " eur."
+                    students[i].firstName.Value + "\t" + ((students[i].amount.Value) / 100.00) + "€"
                 );
             }
         }
 
         private async void btnPay_Click(object sender, EventArgs e)
         {
+            double amount = await database.GetStudentAmount(currentStudent.GetId()) / 100;
+            if (amount >= 0)
+            {
+                MessageBox.Show("You do not owe anything.");
+                return;
+            }
+           
             string price = tbSubstractAmount.Text;
             if (price == "")
             {
+                MessageBox.Show("Please input a price.");
                 return;
             }
 
+            var students = await database.GetStudentsAmounts();
+            var payments = await database.GetPayments();
+
+            int intPrice = Convert.ToInt32(Convert.ToDouble(price) * 100);
+
+            int pos = lsbGroceriesStudents.SelectedIndex;
+            int id = Convert.ToInt32(students[pos].id.Value);
+            if (id == currentStudent.GetId())
+            {
+                MessageBox.Show("You cannot pay yourself");
+                return;
+            }
+
+            await database.UpdateStudentAmount(id, -intPrice);
+            await database.UpdateStudentAmount(currentStudent.GetId(), intPrice);
+
             tbSubstractAmount.Text = "";
-            await database.InsertPayment(currentStudent.GetFirstName() + " deposited " + price + " eur.");
-            await database.UpdateStudentAmount(currentStudent.GetId(), Convert.ToInt32(Convert.ToDouble(price) * 100));
+            //await database.InsertPayment(currentStudent.GetFirstName() + " deposited " + price + " eur.");
+            //await database.UpdateStudentAmount(currentStudent.GetId(), Convert.ToInt32(Convert.ToDouble(price) * 100));
             refreshGroceriesTab();
         }
 

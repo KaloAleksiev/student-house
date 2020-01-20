@@ -127,6 +127,7 @@
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogin_KeyDown);
             // 
             // tbPassword
             // 
@@ -138,6 +139,7 @@
             this.tbPassword.Size = new System.Drawing.Size(275, 33);
             this.tbPassword.TabIndex = 1;
             this.tbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
             // 
             // tbName
             // 
@@ -148,6 +150,7 @@
             this.tbName.Size = new System.Drawing.Size(275, 33);
             this.tbName.TabIndex = 0;
             this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbName_KeyDown);
             // 
             // lblLogin
             // 

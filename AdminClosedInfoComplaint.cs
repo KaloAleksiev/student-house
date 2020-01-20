@@ -25,7 +25,6 @@ namespace Project1
             lblId.Text = complaint.GetAuthorId().ToString();
             tbComplaint.Text = complaint.GetMessage();
             lblStatus.Text = "Closed";
-            lblAnnouncements.Text = "Complaint #" + complaint.GetComplaintId();
             answer();
         }
         private async void answer()

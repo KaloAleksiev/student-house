@@ -66,7 +66,7 @@
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblId.Location = new System.Drawing.Point(107, 123);
+            this.lblId.Location = new System.Drawing.Point(89, 123);
             this.lblId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(0, 17);
@@ -89,7 +89,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblName.Location = new System.Drawing.Point(107, 106);
+            this.lblName.Location = new System.Drawing.Point(60, 106);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(0, 17);
@@ -100,7 +100,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblTitle.Location = new System.Drawing.Point(107, 157);
+            this.lblTitle.Location = new System.Drawing.Point(49, 174);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(0, 17);
@@ -111,7 +111,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label3.Location = new System.Drawing.Point(9, 157);
+            this.label3.Location = new System.Drawing.Point(9, 174);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 17);
@@ -135,7 +135,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblDate.Location = new System.Drawing.Point(107, 140);
+            this.lblDate.Location = new System.Drawing.Point(52, 140);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(0, 17);
@@ -143,21 +143,27 @@
             // 
             // tbComplaint
             // 
-            this.tbComplaint.ForeColor = System.Drawing.Color.White;
+            this.tbComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbComplaint.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbComplaint.ForeColor = System.Drawing.Color.DarkOrchid;
             this.tbComplaint.Location = new System.Drawing.Point(12, 204);
-            this.tbComplaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.tbComplaint.Name = "tbComplaint";
-            this.tbComplaint.Size = new System.Drawing.Size(161, 105);
+            this.tbComplaint.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.tbComplaint.Size = new System.Drawing.Size(172, 105);
             this.tbComplaint.TabIndex = 74;
             this.tbComplaint.Text = "";
             // 
             // tbAnswer
             // 
-            this.tbAnswer.ForeColor = System.Drawing.Color.White;
-            this.tbAnswer.Location = new System.Drawing.Point(206, 204);
-            this.tbAnswer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAnswer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.tbAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAnswer.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.tbAnswer.Location = new System.Drawing.Point(195, 204);
+            this.tbAnswer.Margin = new System.Windows.Forms.Padding(2);
             this.tbAnswer.Name = "tbAnswer";
-            this.tbAnswer.Size = new System.Drawing.Size(161, 105);
+            this.tbAnswer.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.tbAnswer.Size = new System.Drawing.Size(172, 105);
             this.tbAnswer.TabIndex = 76;
             this.tbAnswer.Text = "";
             // 
@@ -166,10 +172,10 @@
             this.btnSubmitAnswer.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnSubmitAnswer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmitAnswer.ForeColor = System.Drawing.Color.White;
-            this.btnSubmitAnswer.Location = new System.Drawing.Point(206, 313);
-            this.btnSubmitAnswer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmitAnswer.Location = new System.Drawing.Point(195, 313);
+            this.btnSubmitAnswer.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmitAnswer.Name = "btnSubmitAnswer";
-            this.btnSubmitAnswer.Size = new System.Drawing.Size(161, 37);
+            this.btnSubmitAnswer.Size = new System.Drawing.Size(172, 37);
             this.btnSubmitAnswer.TabIndex = 77;
             this.btnSubmitAnswer.Text = "Submit Answer";
             this.btnSubmitAnswer.UseVisualStyleBackColor = false;
@@ -180,7 +186,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblStatus.Location = new System.Drawing.Point(107, 174);
+            this.lblStatus.Location = new System.Drawing.Point(62, 157);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 17);
@@ -191,12 +197,12 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label5.Location = new System.Drawing.Point(9, 174);
+            this.label5.Location = new System.Drawing.Point(9, 157);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 78;
-            this.label5.Text = "Status";
+            this.label5.Text = "Status:";
             // 
             // label8
             // 
@@ -235,7 +241,7 @@
             this.lblAnswer.AutoSize = true;
             this.lblAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblAnswer.Location = new System.Drawing.Point(262, 185);
+            this.lblAnswer.Location = new System.Drawing.Point(252, 185);
             this.lblAnswer.Name = "lblAnswer";
             this.lblAnswer.Size = new System.Drawing.Size(53, 17);
             this.lblAnswer.TabIndex = 83;
@@ -264,7 +270,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblDate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminInfoComplaint";
             this.Text = "Complaint Info";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

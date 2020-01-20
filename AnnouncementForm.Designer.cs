@@ -45,23 +45,27 @@
             this.tbTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
             this.tbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTitle.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.tbTitle.Location = new System.Drawing.Point(37, 144);
-            this.tbTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTitle.Location = new System.Drawing.Point(13, 144);
+            this.tbTitle.Margin = new System.Windows.Forms.Padding(4);
             this.tbTitle.Name = "tbTitle";
-            this.tbTitle.Size = new System.Drawing.Size(311, 25);
+            this.tbTitle.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.tbTitle.Size = new System.Drawing.Size(368, 25);
             this.tbTitle.TabIndex = 0;
+            this.tbTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbMessage
             // 
             this.tbMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
             this.tbMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMessage.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.tbMessage.Location = new System.Drawing.Point(37, 201);
-            this.tbMessage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbMessage.Location = new System.Drawing.Point(12, 201);
+            this.tbMessage.Margin = new System.Windows.Forms.Padding(4);
             this.tbMessage.Multiline = true;
             this.tbMessage.Name = "tbMessage";
-            this.tbMessage.Size = new System.Drawing.Size(311, 130);
+            this.tbMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbMessage.Size = new System.Drawing.Size(369, 130);
             this.tbMessage.TabIndex = 1;
+            this.tbMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -92,10 +96,10 @@
             this.btnPostAnnouncement.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnPostAnnouncement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostAnnouncement.ForeColor = System.Drawing.Color.White;
-            this.btnPostAnnouncement.Location = new System.Drawing.Point(37, 348);
-            this.btnPostAnnouncement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPostAnnouncement.Location = new System.Drawing.Point(12, 349);
+            this.btnPostAnnouncement.Margin = new System.Windows.Forms.Padding(4);
             this.btnPostAnnouncement.Name = "btnPostAnnouncement";
-            this.btnPostAnnouncement.Size = new System.Drawing.Size(311, 42);
+            this.btnPostAnnouncement.Size = new System.Drawing.Size(369, 42);
             this.btnPostAnnouncement.TabIndex = 4;
             this.btnPostAnnouncement.Text = "Post New Announcement";
             this.btnPostAnnouncement.UseVisualStyleBackColor = false;
@@ -138,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(394, 413);
+            this.ClientSize = new System.Drawing.Size(394, 404);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox5);
@@ -149,7 +153,7 @@
             this.Controls.Add(this.tbTitle);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnnouncementForm";
             this.Text = "New Announcement";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

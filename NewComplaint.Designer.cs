@@ -45,18 +45,20 @@
             this.tbComplaintText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
             this.tbComplaintText.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbComplaintText.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.tbComplaintText.Location = new System.Drawing.Point(36, 196);
+            this.tbComplaintText.Location = new System.Drawing.Point(12, 196);
             this.tbComplaintText.Multiline = true;
             this.tbComplaintText.Name = "tbComplaintText";
-            this.tbComplaintText.Size = new System.Drawing.Size(311, 130);
+            this.tbComplaintText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbComplaintText.Size = new System.Drawing.Size(350, 130);
             this.tbComplaintText.TabIndex = 34;
+            this.tbComplaintText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblComplaintText
             // 
             this.lblComplaintText.AutoSize = true;
             this.lblComplaintText.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComplaintText.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lblComplaintText.Location = new System.Drawing.Point(177, 172);
+            this.lblComplaintText.Location = new System.Drawing.Point(165, 172);
             this.lblComplaintText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblComplaintText.Name = "lblComplaintText";
             this.lblComplaintText.Size = new System.Drawing.Size(40, 21);
@@ -68,20 +70,22 @@
             this.tbComplaintTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
             this.tbComplaintTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbComplaintTitle.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.tbComplaintTitle.Location = new System.Drawing.Point(36, 140);
-            this.tbComplaintTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbComplaintTitle.Location = new System.Drawing.Point(12, 140);
+            this.tbComplaintTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tbComplaintTitle.Name = "tbComplaintTitle";
-            this.tbComplaintTitle.Size = new System.Drawing.Size(311, 25);
+            this.tbComplaintTitle.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.tbComplaintTitle.Size = new System.Drawing.Size(350, 25);
             this.tbComplaintTitle.TabIndex = 32;
+            this.tbComplaintTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSendComplaint
             // 
             this.btnSendComplaint.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnSendComplaint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendComplaint.ForeColor = System.Drawing.Color.White;
-            this.btnSendComplaint.Location = new System.Drawing.Point(36, 332);
+            this.btnSendComplaint.Location = new System.Drawing.Point(12, 332);
             this.btnSendComplaint.Name = "btnSendComplaint";
-            this.btnSendComplaint.Size = new System.Drawing.Size(311, 42);
+            this.btnSendComplaint.Size = new System.Drawing.Size(350, 42);
             this.btnSendComplaint.TabIndex = 31;
             this.btnSendComplaint.Text = "Send complaint to administrator";
             this.btnSendComplaint.UseVisualStyleBackColor = false;
@@ -92,7 +96,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label1.Location = new System.Drawing.Point(177, 117);
+            this.label1.Location = new System.Drawing.Point(163, 117);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 21);
@@ -136,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(392, 395);
+            this.ClientSize = new System.Drawing.Size(374, 383);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox5);
@@ -145,7 +149,7 @@
             this.Controls.Add(this.lblComplaintText);
             this.Controls.Add(this.tbComplaintTitle);
             this.Controls.Add(this.btnSendComplaint);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NewComplaint";
             this.Text = "New Complaint";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

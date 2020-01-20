@@ -38,7 +38,7 @@ namespace Project1
         {
             if(tbFirstName.Text!="" && tbLastName.Text!= "" && tbEmail.Text!= "" && tbPassword.Text!= "" && tbRoomId.Text!= "")
             {
-                database.InsertNewStudent(tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPassword.Text, tbRoomId.Text);
+                await database.InsertNewStudent(tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPassword.Text, tbRoomId.Text);
                 tbFirstName.Clear();
                 tbLastName.Clear();
                 tbEmail.Clear();
