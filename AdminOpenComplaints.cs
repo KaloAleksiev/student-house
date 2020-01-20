@@ -17,6 +17,7 @@ namespace Project1
         public AdminOpenComplaints()
         {
             InitializeComponent();
+            showAllComplaints();
         }
 
         private async void showAllComplaints()
@@ -45,12 +46,22 @@ namespace Project1
 
         private void lbOpenComplaints_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = lbOpenComplaints.SelectedIndex;
-            AdminInfoComplaint cf = new AdminInfoComplaint(complaintList.GetComplaintAtIndex(index));
-            cf.Show();
+            if (lbOpenComplaints.Items.Contains("There are no new complaints") == false)
+            {
+
+                int index = lbOpenComplaints.SelectedIndex;
+                Announcement anno = complaintList.GetComplaintAtIndex(index);
+                if (anno != null)
+                {
+                    AdminInfoComplaint cf = new AdminInfoComplaint(anno);
+                    cf.Show();
+                }
+            }
+            
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             showAllComplaints();
         }

@@ -40,8 +40,20 @@ namespace Project1
         private void lbClosedComplaints_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = lbClosedComplaints.SelectedIndex;
-            AdminClosedInfoComplaint cf = new AdminClosedInfoComplaint(complaintList.GetComplaintAtIndex(index));
-            cf.Show();
+            if (lbClosedComplaints.Items.Contains("There are no closed complaints")==false)
+            {
+                Announcement anno = complaintList.GetComplaintAtIndex(index);
+                if (anno != null)
+                {
+                    AdminInfoComplaint cf = new AdminInfoComplaint(anno);
+                    cf.Show();
+                }
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            showAllComplaints();
         }
     }
 }

@@ -33,6 +33,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblAnnouncements = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.lbClosedComplaints.Location = new System.Drawing.Point(184, 198);
             this.lbClosedComplaints.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbClosedComplaints.Name = "lbClosedComplaints";
-            this.lbClosedComplaints.Size = new System.Drawing.Size(401, 214);
+            this.lbClosedComplaints.Size = new System.Drawing.Size(395, 172);
             this.lbClosedComplaints.TabIndex = 66;
             this.lbClosedComplaints.SelectedIndexChanged += new System.EventHandler(this.lbClosedComplaints_SelectedIndexChanged);
             // 
@@ -84,11 +85,26 @@
             this.pictureBox4.TabIndex = 63;
             this.pictureBox4.TabStop = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(270, 383);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(209, 54);
+            this.btnRefresh.TabIndex = 87;
+            this.btnRefresh.Text = "Refresh List";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // AdminClosedComplaints
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lbClosedComplaints);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblAnnouncements);
@@ -107,5 +123,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblAnnouncements;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

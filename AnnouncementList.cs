@@ -22,7 +22,11 @@ namespace Project1
 
         public Announcement GetComplaintAtIndex(int index)
         {
-            return announcementList[index];
+            if (announcementList.Count >= index + 1)
+            {
+                return announcementList[index];
+            }
+            return null;
         }
 
         public List<Announcement> GetAllInfo()

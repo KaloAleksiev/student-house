@@ -49,12 +49,21 @@ namespace Project1
 
         private void lbOldComplaints_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            int index = lbOldComplaints.SelectedIndex;
             if (lbOldComplaints.Items.Contains("You have no past complaint") == false)
             {
-                ComplaintInfo cf = new ComplaintInfo(complaintList.GetComplaintAtIndex(index));
-                cf.Show();
+                int index = lbOldComplaints.SelectedIndex;
+                Announcement anno = complaintList.GetComplaintAtIndex(index);
+                if (anno != null)
+                {
+                    ComplaintInfo cf = new ComplaintInfo(anno);
+                    cf.Show();
+                }
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            showAllComplaints();
         }
     }
 }
