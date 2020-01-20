@@ -85,8 +85,9 @@
             this.tbComplaint.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbComplaint.ForeColor = System.Drawing.Color.DarkOrchid;
             this.tbComplaint.Location = new System.Drawing.Point(11, 155);
-            this.tbComplaint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.tbComplaint.Name = "tbComplaint";
+            this.tbComplaint.ReadOnly = true;
             this.tbComplaint.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.tbComplaint.Size = new System.Drawing.Size(172, 105);
             this.tbComplaint.TabIndex = 46;
@@ -133,8 +134,9 @@
             this.tbAdminAnswer.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbAdminAnswer.ForeColor = System.Drawing.Color.DarkOrchid;
             this.tbAdminAnswer.Location = new System.Drawing.Point(195, 155);
-            this.tbAdminAnswer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbAdminAnswer.Margin = new System.Windows.Forms.Padding(2);
             this.tbAdminAnswer.Name = "tbAdminAnswer";
+            this.tbAdminAnswer.ReadOnly = true;
             this.tbAdminAnswer.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.tbAdminAnswer.Size = new System.Drawing.Size(172, 105);
             this.tbAdminAnswer.TabIndex = 54;
@@ -202,7 +204,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbComplaint);
             this.Controls.Add(this.lblDate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ComplaintInfo";
             this.Text = "ComplaintInfo";
             this.Load += new System.EventHandler(this.ComplaintInfo_Load);

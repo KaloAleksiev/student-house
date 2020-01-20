@@ -45,7 +45,7 @@ namespace Project1
                 Announcement anno = complaintList.GetComplaintAtIndex(index);
                 if (anno != null)
                 {
-                    AdminInfoComplaint cf = new AdminInfoComplaint(anno);
+                    AdminClosedInfoComplaint cf = new AdminClosedInfoComplaint(anno);
                     cf.Show();
                 }
             }

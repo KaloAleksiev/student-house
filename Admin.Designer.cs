@@ -428,6 +428,7 @@
             this.lbAnnouncements.Name = "lbAnnouncements";
             this.lbAnnouncements.Size = new System.Drawing.Size(407, 140);
             this.lbAnnouncements.TabIndex = 20;
+            this.lbAnnouncements.SelectedIndexChanged += new System.EventHandler(this.lbAnnouncements_SelectedIndexChanged_1);
             // 
             // Admin
             // 

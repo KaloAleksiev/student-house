@@ -87,13 +87,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Rules = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnRules = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.Home.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -181,13 +182,14 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnRules);
             this.panel2.Controls.Add(this.btnComplaints);
             this.panel2.Controls.Add(this.btnCleaningSchedule);
             this.panel2.Controls.Add(this.btnGroceries);
             this.panel2.Controls.Add(this.btnAnnouncements);
-            this.panel2.Location = new System.Drawing.Point(55, 258);
+            this.panel2.Location = new System.Drawing.Point(22, 258);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(447, 171);
+            this.panel2.Size = new System.Drawing.Size(521, 171);
             this.panel2.TabIndex = 7;
             // 
             // btnComplaints
@@ -195,7 +197,7 @@
             this.btnComplaints.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnComplaints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplaints.ForeColor = System.Drawing.Color.White;
-            this.btnComplaints.Location = new System.Drawing.Point(274, 98);
+            this.btnComplaints.Location = new System.Drawing.Point(358, 98);
             this.btnComplaints.Margin = new System.Windows.Forms.Padding(2);
             this.btnComplaints.Name = "btnComplaints";
             this.btnComplaints.Size = new System.Drawing.Size(155, 56);
@@ -223,7 +225,7 @@
             this.btnGroceries.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnGroceries.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGroceries.ForeColor = System.Drawing.Color.White;
-            this.btnGroceries.Location = new System.Drawing.Point(274, 17);
+            this.btnGroceries.Location = new System.Drawing.Point(358, 17);
             this.btnGroceries.Margin = new System.Windows.Forms.Padding(2);
             this.btnGroceries.Name = "btnGroceries";
             this.btnGroceries.Size = new System.Drawing.Size(155, 56);
@@ -822,15 +824,6 @@
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
             // 
-            // serialPort1
-            // 
-            this.serialPort1.PortName = "COM3";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Rules
             // 
             this.Rules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
@@ -843,6 +836,17 @@
             this.Rules.Size = new System.Drawing.Size(569, 438);
             this.Rules.TabIndex = 5;
             this.Rules.Text = "Rules";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
+            this.richTextBox1.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.richTextBox1.Location = new System.Drawing.Point(25, 138);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(522, 282);
+            this.richTextBox1.TabIndex = 18;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // label13
             // 
@@ -876,15 +880,28 @@
             this.pictureBox6.TabIndex = 15;
             this.pictureBox6.TabStop = false;
             // 
-            // richTextBox1
+            // serialPort1
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(20)))));
-            this.richTextBox1.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.richTextBox1.Location = new System.Drawing.Point(25, 138);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(522, 282);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.serialPort1.PortName = "COM5";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnRules
+            // 
+            this.btnRules.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnRules.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRules.ForeColor = System.Drawing.Color.White;
+            this.btnRules.Location = new System.Drawing.Point(185, 61);
+            this.btnRules.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRules.Name = "btnRules";
+            this.btnRules.Size = new System.Drawing.Size(155, 56);
+            this.btnRules.TabIndex = 6;
+            this.btnRules.Text = "Rules";
+            this.btnRules.UseVisualStyleBackColor = false;
+            this.btnRules.Click += new System.EventHandler(this.btnRules_Click);
             // 
             // Form5
             // 
@@ -990,5 +1007,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button btnRules;
     }
 }

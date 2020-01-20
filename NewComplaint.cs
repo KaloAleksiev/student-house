@@ -25,7 +25,7 @@ namespace Project1
           
         }
 
-        private void btnSendComplaint_Click_1(object sender, EventArgs e)
+        private async void btnSendComplaint_Click_1(object sender, EventArgs e)
         {
             if (tbComplaintTitle.Text != "" && tbComplaintText.Text != "")
             {

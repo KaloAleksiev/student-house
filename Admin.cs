@@ -34,11 +34,11 @@ namespace Project1
 
         }
 
-        private async void btnCreateAccount_Click(object sender, EventArgs e)
+        private void btnCreateAccount_Click(object sender, EventArgs e)
         {
             if(tbFirstName.Text!="" && tbLastName.Text!= "" && tbEmail.Text!= "" && tbPassword.Text!= "" && tbRoomId.Text!= "")
             {
-                await database.InsertNewStudent(tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPassword.Text, tbRoomId.Text);
+                database.InsertNewStudent(tbFirstName.Text, tbLastName.Text, tbEmail.Text, tbPassword.Text, tbRoomId.Text);
                 tbFirstName.Clear();
                 tbLastName.Clear();
                 tbEmail.Clear();
@@ -105,6 +105,13 @@ namespace Project1
                     lbAnnouncements.Items.Add(anno.GetInfo());
                 }
             }
+        }
+
+        private async void lbAnnouncements_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            AnnouncementList annoList = await database.GetAllAnnouncements();
+            InfoForm infoForm = new InfoForm(annoList.GetAllInfo()[lbAnnouncements.SelectedIndex]);
+            infoForm.Show();
         }
     }
 }

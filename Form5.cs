@@ -237,24 +237,8 @@ namespace Project1
             tbxPurchase.Text = "";
             tbPrice.Text = "";
 
-            //int priceint = Convert.ToInt32(Convert.ToDouble(price) * 100);
-
             double amount = await database.GetStudentAmount(currentStudent.GetId());
-            //int newAmount = priceint + amount;
-            //if (newAmount > 0)
-            //{
-            //    int stAmount = (await database.GetStudentsAmounts()).Count;
-
-            //    await database.SetStudentAmount(currentStudent.GetId(), 0);
-            //    await database.UpdateOtherStudentsAmounts(
-            //        currentStudent.GetId(),
-            //        -newAmount / stAmount
-            //    );
-            //}
-            //else
-            //{
-            //    await database.SetStudentAmount(currentStudent.GetId(), newAmount);
-            //}
+            
             int nrOfStudents = await database.GetTotalStudents();
             int change = intPrice / nrOfStudents;
             int buyerChange = change * (nrOfStudents - 1);
@@ -325,6 +309,11 @@ namespace Project1
             //await database.InsertPayment(currentStudent.GetFirstName() + " deposited " + price + " eur.");
             //await database.UpdateStudentAmount(currentStudent.GetId(), Convert.ToInt32(Convert.ToDouble(price) * 100));
             refreshGroceriesTab();
+        }
+
+        private void btnRules_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab("Rules");
         }
 
         private void timer1_Tick(object sender, EventArgs e)

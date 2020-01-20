@@ -26,13 +26,13 @@ namespace Project1
             lblStatus.Text = "Open";
         }
 
-        private async void btnSubmitAnswer_Click(object sender, EventArgs e)
+        private void btnSubmitAnswer_Click(object sender, EventArgs e)
         {
             string answer=tbAnswer.Text;
             if (answer != "")
             {
-                await database.InsertNewAnswer(answer, Convert.ToInt32(complaint.GetComplaintId()));
-                await database.CloseComplaint(Convert.ToInt32(complaint.GetComplaintId()));
+                database.InsertNewAnswer(answer, Convert.ToInt32(complaint.GetComplaintId()));
+                database.CloseComplaint(Convert.ToInt32(complaint.GetComplaintId()));
                 MessageBox.Show("Complaint #" + complaint.GetComplaintId() + " closed");
                 this.Close();
             }
